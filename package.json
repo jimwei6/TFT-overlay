@@ -1,0 +1,22 @@
+{
+  "name": "tft-overlay",
+  "version": "1.0.0",
+  "description": "League of Legends Team Fight Tactics Overlay. Use keyboard shortcuts to view champion origins, synergies, itemization and more easily.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimwei0620/TFT-overlay.git"
+  },
+  "author": "Jim Wei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimwei0620/TFT-overlay/issues"
+  },
+  "homepage": "https://github.com/jimwei0620/TFT-overlay#readme",
+  "devDependencies": {
+    "electron": "^6.0.9"
+  }
+}
