@@ -6,8 +6,7 @@ const {app, BrowserWindow} = electron
 
 let mainWindow
 
-app.on('ready',()=>{
-
+function windowInit() {                 //set up the window and its defaults
     mainWindow = new BrowserWindow({
         transparent: true,
         frame: false,
@@ -17,12 +16,23 @@ app.on('ready',()=>{
         backgroundColor: '#111111',
         titleBarStyle: "hiddenInset",
         webPreferences: {nodeIntegration: true}, 
-
+        alwaysOnTop: true,
     })
+}
 
+function loadHTML(){                    //load index.html into the browser window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
         slashes: true,
     }))
+}
+
+app.on('ready',()=>{                    //run when app is ready, 
+
+    windowInit()
+
+    loadHTML()
+
 })
+
