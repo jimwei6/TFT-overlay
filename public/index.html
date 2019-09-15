@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <p style="color: aliceblue">dummy message</p>
+<head id="head">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <div class="slidecontainer">
+        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+    </div>
+    <p style="color: aliceblue" id ="testMessage"></p>
 </head>
-<body>
-    
+<body id="body">
+
+     <script>
+        var scrollbar = document.getElementById("myRange")
+        scrollbar.oninput = function() {
+        var value = parseFloat(this.value/100, 10)
+        document.getElementById("testMessage").innerHTML = value;
+        document.getElementById("body").style.opacity = value;
+        document.getElementById("head").style.opacity = value;
+        }
+    </script>
+
 </body>
 </html>

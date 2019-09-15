@@ -10,14 +10,12 @@ function windowInit() {                 //set up the window and its defaults
     mainWindow = new BrowserWindow({
         transparent: true,
         frame: false,
-        width: 'screenX',
-        height: 'screenY',
         title: "LoL tft Overlay",
-        backgroundColor: '#111111',
         titleBarStyle: "hiddenInset",
         webPreferences: {nodeIntegration: true}, 
         alwaysOnTop: true,
     })
+    mainWindow.maximize()
 }
 
 function loadHTML(){                    //load index.html into the browser window
