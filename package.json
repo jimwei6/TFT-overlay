@@ -2,7 +2,7 @@
   "name": "tft-overlay",
   "version": "1.0.0",
   "description": "League of Legends Team Fight Tactics Overlay. Use keyboard shortcuts to view champion origins, synergies, itemization and more easily.",
-  "main": "index.js",
+  "main": "public/index.js",
   "scripts": {
     "start": "electron ."
   },
