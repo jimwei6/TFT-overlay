@@ -14,6 +14,21 @@
   background-color:rgba(250, 0, 0, 0.2);
 }
 
+.clickable{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba( 117, 117, 30, 0.25);
+  height: 40px;
+  width: 140px;
+  -webkit-user-select: none;
+}
+
+.clickable:hover{
+  background-color: rgba( 117, 117, 30, 0.5);
+  
+}
+
 .slidecontainer {
     width: 5%; /* Width of the outside container */
     position: absolute;
