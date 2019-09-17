@@ -14,8 +14,8 @@
         scrollbar.oninput = function() {
         var value = parseFloat(this.value/100, 10)
         document.getElementById("testMessage").innerHTML = value;
-        document.getElementById("body").style.opacity = value;
-        document.getElementById("head").style.opacity = value;
+        document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")";
+        //document.getElementById("head").style.opacity = value;
         }
     </script>
 
