@@ -16,7 +16,7 @@ function windowInit() {                 //set up the window and its defaults
         alwaysOnTop: true,
     })
     mainWindow.maximize()
-    //mainWindow.setIgnoreMouseEvents(true, {forward: true});
+    mainWindow.setIgnoreMouseEvents(true, {forward: true});
 }
 
 function loadHTML(){                    //load index.html into the browser window
@@ -34,5 +34,7 @@ app.on('ready',()=>{                    //run when app is ready,
     loadHTML()
 
 })
+
+
 
 

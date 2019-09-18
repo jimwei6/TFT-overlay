@@ -6,13 +6,13 @@
     -webkit-app-region: no-drag;   
 } 
 
-.draggable{
-  height: 20px;
-  width: 20px;
+/* .draggable{
+  height: 40px;
+  width: 40px;
   -webkit-app-region: drag;
   -webkit-user-select: none;
   background-color:rgba(250, 0, 0, 0.2);
-}
+} */
 
 .clickable{
   position: absolute;
@@ -30,9 +30,9 @@
 }
 
 .slidecontainer {
-    width: 5%; /* Width of the outside container */
+    width: 80%; /* Width of the outside container */
     position: absolute;
-    left: 30px;
+    left: 10px;
     top: 8px;
   }
 

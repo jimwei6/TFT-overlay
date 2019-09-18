@@ -2,25 +2,43 @@
 <html lang="en">
 <head id="head">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <p1 class="clickable"></p1>
-    <img src="../resources/otherIcons/4wayArrow.png" class="draggable">
+
     
-    <div class="slidecontainer">
-        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-    </div>
-    <p style="color: aliceblue" id ="testMessage"></p>
+    
+    <div onmouseover="clickE()" onmouseout="clickD()" class="clickable">
+            <div class="slidecontainer" >
+                    <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+            </div>
+    </div>   
+    
 </head>
 <body id="body">
+    <p style="color: aliceblue" id ="testMessage"></p>
+    
+    <script>
+        const electron = require('electron')
+        const remote = electron.remote
+        var mouseEnable = false;
 
-     <script>
         var scrollbar = document.getElementById("myRange")
+
         scrollbar.oninput = function() {
-        var value = parseFloat(this.value/100, 10)
-        document.getElementById("testMessage").innerHTML = value;
-        document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")";
-        //document.getElementById("head").style.opacity = value;
+            var value = parseFloat(this.value/100, 10)
+            document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")"
+            //document.getElementById("head").style.opacity = value;
         }
+        
+        function clickE(){
+            remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
+            document.getElementById("testMessage").innerHTML = mouseEnable
+        }
+        function clickD(){
+            remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
+            document.getElementById("testMessage").innerHTML = !mouseEnable
+        }
+
+
     </script>
 
 </body>
-</html>
+</html> 
