@@ -4,13 +4,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     
-    
-    <div onmouseover="clickE()" onmouseout="clickD()" class="clickable">
-            <div class="slidecontainer" >
-                    <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+    <div>
+        <div onmouseover="clickE()" onmouseout="clickD()" onclick="closeWindow()" class="closeBar"  id="closeBar" style="float: right">
+            <div >
+                <p id="x-shutOff">X</p>
             </div>
-    </div>   
-    
+            
+        </div>
+        <div onmouseover="clickE()" onmouseout="clickD()" class="clickable" id="dragBar" style="float: left">
+                <div class="slidecontainer" >
+                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                </div>
+        </div>   
+    </div>
 </head>
 <body id="body">
     <p style="color: aliceblue" id ="testMessage"></p>
@@ -35,6 +41,10 @@
         function clickD(){
             remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
             document.getElementById("testMessage").innerHTML = !mouseEnable
+        }
+
+        function closeWindow(){
+            remote.getCurrentWindow().close()
         }
 
 

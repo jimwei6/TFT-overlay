@@ -15,25 +15,51 @@
 } */
 
 .clickable{
-  position: absolute;
-  top: 0px;
-  left: 0px;
   background-color: rgba( 117, 117, 30, 0.25);
   height: 40px;
   width: 140px;
   -webkit-user-select: none;
+}
+.closeBar{
+  background-color: rgba( 117, 117, 30, 0.25);
+  height: 30px;
+  width: 60px;
+  -webkit-user-select: none;
+}
+
+#closeBar{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+#x-shutOff{
+ position: absolute;
+ top: -10px;
+ right: 25px;
+color: white;
+}
+
+#dragBar{
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }
 
 .clickable:hover{
   background-color: rgba( 117, 117, 30, 0.5);
   
 }
+.closeBar:hover{
+  background-color: rgba( 255, 0, 0, 0.5);
+  
+}
 
 .slidecontainer {
     width: 80%; /* Width of the outside container */
-    position: absolute;
-    left: 10px;
-    top: 8px;
+    position: inherit;
+    left: 5%;
+    top: 25%;
   }
 
   
