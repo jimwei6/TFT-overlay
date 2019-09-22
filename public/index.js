@@ -14,9 +14,11 @@ function windowInit() {                 //set up the window and its defaults
         titleBarStyle: "hiddenInset",
         webPreferences: {nodeIntegration: true}, 
         alwaysOnTop: true,
+        minHeight:800,
+        minWidth: 800
     })
     mainWindow.maximize()
-    mainWindow.setIgnoreMouseEvents(true, {forward: true});
+   // mainWindow.setIgnoreMouseEvents(true, {forward: true});
 }
 
 function loadHTML(){                    //load index.html into the browser window

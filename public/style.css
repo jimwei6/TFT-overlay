@@ -1,11 +1,11 @@
  body{
   
     background-color: rgba(250, 250, 250, 0.5);
-    padding-top: 20 px;
+    padding-top: 10vh;
     overflow: hidden;
     -webkit-app-region: no-drag;   
 } 
-
+html { font-size: calc(0.75em + 0.25vw) }
 /* .draggable{
   height: 40px;
   width: 40px;
@@ -16,28 +16,29 @@
 
 .clickable{
   background-color: rgba( 117, 117, 30, 0.25);
-  height: 40px;
-  width: 140px;
+  height: 4vh;
+  width: 8vw;
   -webkit-user-select: none;
 }
 .closeBar{
   background-color: rgba( 117, 117, 30, 0.25);
-  height: 30px;
-  width: 60px;
+  height: 4vh;
+  width: 4vw;
   -webkit-user-select: none;
 }
 
 #closeBar{
-  position: absolute;
+  position: fixed;
   top: 0%;
   right: 0%;
 }
 
 #x-shutOff{
- position: absolute;
- top: -10px;
- right: 25px;
+text-align: center;
+
+position: relative;
 color: white;
+
 }
 
 #dragBar{
@@ -69,7 +70,7 @@ color: white;
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
-    height: 10px; /* Specified height */
+    height: 1vh; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -86,15 +87,15 @@ color: white;
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 15px; /* Set a specific slider handle width */
-    height: 15px; /* Slider handle height */
+    width: 1.5vw; /* Set a specific slider handle width */
+    height: 1.5vh; /* Slider handle height */
     background: #FFF; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
   
   .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    width: 2vw; /* Set a specific slider handle width */
+    height: 2vw; /* Slider handle height */
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
