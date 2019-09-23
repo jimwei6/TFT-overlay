@@ -14,8 +14,8 @@ function windowInit() {                 //set up the window and its defaults
         titleBarStyle: "hiddenInset",
         webPreferences: {nodeIntegration: true}, 
         alwaysOnTop: true,
-        minHeight:800,
-        minWidth: 800
+        minHeight:720,
+        minWidth: 1280
     })
     mainWindow.maximize()
    // mainWindow.setIgnoreMouseEvents(true, {forward: true});

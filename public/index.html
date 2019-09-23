@@ -2,8 +2,86 @@
 <html lang="en">
 <head id="head">
     <link rel="stylesheet" type="text/css" href="style.css">
-
     
+    <template>
+        <div class="infoBox" id="Origins"  style="display: none">
+           
+            <div class="row">
+                <div class="col-4" id="Demon" >
+                    <h1 style="color: white; text-align: center">Demon</h1>
+                  
+
+                </div>
+                
+                <div class="col-4" id="Glacial">
+                    <h1 style="color: white; text-align: center ">Glacial</h1>
+                    </div>
+
+                <div class="col-4" id="Noble">
+                    <h1 style="color: white; text-align: center">Noble</h1>
+                    </div>
+
+            </div>
+            <div class="row">
+                <div class="col-4" id="Void">
+                    <h1 style="color: white; text-align: center">Void</h1>
+                </div>
+    
+                <div class="col-4" id="Pirate">
+                    <h1 style="color: white; text-align: center ">Pirate</h1>
+                </div>
+    
+                <div class="col-4" id="Wild">
+                    <h1 style="color: white; text-align: center">Wild</h1>
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="col-4" id="Yordle">
+                    <h1 style="color: white; text-align: center">Yordle</h1>
+                </div>
+        
+                <div class="col-3" id="Dragon">
+                    <h1 style="color: white; text-align: center ">Dragon</h1>
+                </div>
+        
+                <div class="col-3" id="Hextech">
+                   <h1 style="color: white; text-align: center">Hextech</h1>
+                </div>
+
+                <div class="col-2" id="Exile">
+                    <h1 style="color: white; text-align: center">Exile</h1>
+                </div>
+
+                
+            </div>
+            <div class="row">
+                <div class="col-4" id="Imperial">
+                    <h1 style="color: white; text-align: center">Imperial</h1>
+                </div>
+            
+                <div class="col-3" id="Ninja">
+                    <h1 style="color: white; text-align: center ">Ninja</h1>
+                </div>
+            
+                <div class="col-3" id="Phantom">
+                    <h1 style="color: white; text-align: center">Phantom</h1>
+                </div>
+
+                <div class="col-2" id="Robot">
+                    <h1 style="color: white; text-align: center">Robot</h1>
+                </div>
+            
+            </div>
+            
+            <h class="sheetTitle">Origins</h>
+        </div>
+    </template>
+    
+
+
+
+
     <div>
         <div onmouseover="clickE()" onmouseout="clickD()" onclick="closeWindow()" class="closeBar"  id="closeBar" style="float: right">
             
@@ -18,10 +96,11 @@
         </div>   
     </div>
 </head>
-<body id="body">
+<body id="body" onkeydown="showOrigins(event)" onkeyup="hideOrigins(event)">
     <p style="color: aliceblue" id ="testMessage"></p>
     
     <script>
+        document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')
         const remote = electron.remote
         var mouseEnable = false;
@@ -36,18 +115,38 @@
         
         function clickE(){
             remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
-            document.getElementById("testMessage").innerHTML = mouseEnable
         }
         function clickD(){
             remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
-            document.getElementById("testMessage").innerHTML = !mouseEnable
         }
 
         function closeWindow(){
             remote.getCurrentWindow().close()
         }
 
+        function hideOrigins(event){
+            
+            if(event.key == "Tab"){
+                document.getElementById("testMessage").innerHTML = event.key
+                document.getElementById("Origins").style.display = "none";
 
+            }
+
+        }
+        
+        function showOrigins(event){
+            
+            if(event.key == "Tab"){
+                document.getElementById("testMessage").innerHTML = "tab pressed"
+                document.getElementById("Origins").style.display = "block";
+            }
+
+        }
+
+    </script>
+    <script src="origins.js">
+        
+        
     </script>
 
 </body>

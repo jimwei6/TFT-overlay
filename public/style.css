@@ -5,7 +5,7 @@
     overflow: hidden;
     -webkit-app-region: no-drag;   
 } 
-html { font-size: calc(0.75em + 0.25vw) }
+html { font-size: calc(0.5em + 0.25vw) }
 /* .draggable{
   height: 40px;
   width: 40px;
@@ -99,4 +99,90 @@ color: white;
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
+
+  .infoBox{
+    background-image: url('../resources/sheetBackgrounds/blackB.jpg');
+    height: 91vh;
+    width: 80vw;
+    position: absolute;
+    top: 4.5vh;
+    left: 10vw;
+  }
+ 
+  .sheetTitle{
+    color: white;
+    position: absolute;
+    bottom: 100%;
+    left: 45%;
+    font-size: 32px;
+  }
+
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding: 0vh;
+    min-height: 20vh;
+    border: 1px solid red;
+    text-align: center;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* .gridContainer{
+
+    display: grid;
+    grid-template-areas: 
+    'demon demon demon glacial glacial glacial noble noble noble'
+    'void void void pirate pirate pirate wild wild wild'
+    'yordle yordle yordle dragon dragon hextech hextech exile robot'
+    'imperial imperial imperial ninja ninja ninja phantom phantom phantom';
+    grid-gap: 5px;
+    background-color:rgba(250, 250, 250, 0.5);
+    padding: 5px;
+  
+  } */
+  
+  /* .Demon{ grid-area: demon;}
+  .Dragon{ grid-area: dragon;}
+  .Exile{ grid-area: exile;}
+  .Glacial{ grid-area: glacial;}
+  .Hextech{ grid-area: hextech;}
+  .Imperial{ grid-area: imperial;}
+  .Ninja{ grid-area: ninja;}
+  .Noble{ grid-area: noble;}
+  .Phantom{ grid-area: phantom;}
+  .Pirate{ grid-area: pirate;}
+  .Robot{ grid-area: robot;}
+  .Void{ grid-area: void;}
+  .Wild{ grid-area: wild;}
+  .Yordle{ grid-area: yordle;} */
+
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  .champIcon{
+    height: 7vh;
+    width: 3.5vw;
+    align-content: center;
+  }
+  
+
+  
 
