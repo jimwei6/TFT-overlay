@@ -1,6 +1,8 @@
 const electron = require('electron')
 const url = require('url')
 const path = require('path')
+const globalShortcut = electron.globalShortcut
+
 
 const {app, BrowserWindow} = electron
 
@@ -18,7 +20,7 @@ function windowInit() {                 //set up the window and its defaults
         minWidth: 1280
     })
     mainWindow.maximize()
-   // mainWindow.setIgnoreMouseEvents(true, {forward: true});
+    mainWindow.setIgnoreMouseEvents(true, {forward: true});
 }
 
 function loadHTML(){                    //load index.html into the browser window
@@ -34,8 +36,16 @@ app.on('ready',()=>{                    //run when app is ready,
     windowInit()
 
     loadHTML()
+    
+    globalShortcut.register('Z', function(){
+
+        if(mainWindow.isFocused != true){
+            mainWindow.focus()
+        }   
+    })
 
 })
+
 
 
 

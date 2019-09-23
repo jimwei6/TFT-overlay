@@ -103,6 +103,7 @@
         document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')
         const remote = electron.remote
+        const ioHook = require('iohook');
         var mouseEnable = false;
 
         var scrollbar = document.getElementById("myRange")
@@ -123,6 +124,9 @@
         function closeWindow(){
             remote.getCurrentWindow().close()
         }
+
+        document.addEventListener("keydown", showOrigins(event))
+        document.addEventListener("keyup", hideOrigins(event))
 
         function hideOrigins(event){
             
