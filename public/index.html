@@ -8,68 +8,66 @@
            
             <div class="row">
                 <div class="col-4" id="Demon" >
-                    <h1 style="color: white; text-align: center">Demon</h1>
-                  
-
+                    <h1 class="nameDisplay">Demon</h1>
                 </div>
                 
                 <div class="col-4" id="Glacial">
-                    <h1 style="color: white; text-align: center ">Glacial</h1>
-                    </div>
+                    <h1 class="nameDisplay">Glacial</h1>
+                </div>
 
                 <div class="col-4" id="Noble">
-                    <h1 style="color: white; text-align: center">Noble</h1>
-                    </div>
+                    <h1 class="nameDisplay">Noble</h1>
+                </div>
 
             </div>
             <div class="row">
                 <div class="col-4" id="Void">
-                    <h1 style="color: white; text-align: center">Void</h1>
+                    <h1 class="nameDisplay">Void</h1>
                 </div>
     
                 <div class="col-4" id="Pirate">
-                    <h1 style="color: white; text-align: center ">Pirate</h1>
+                    <h1 class="nameDisplay">Pirate</h1>
                 </div>
     
                 <div class="col-4" id="Wild">
-                    <h1 style="color: white; text-align: center">Wild</h1>
+                    <h1 class="nameDisplay">Wild</h1>
                 </div>
     
             </div>
             <div class="row">
                 <div class="col-4" id="Yordle">
-                    <h1 style="color: white; text-align: center">Yordle</h1>
+                    <h1 class="nameDisplay">Yordle</h1>
                 </div>
         
                 <div class="col-3" id="Dragon">
-                    <h1 style="color: white; text-align: center ">Dragon</h1>
+                    <h1 class="nameDisplay">Dragon</h1>
                 </div>
         
                 <div class="col-3" id="Hextech">
-                   <h1 style="color: white; text-align: center">Hextech</h1>
+                   <h1 class="nameDisplay">Hextech</h1>
                 </div>
 
                 <div class="col-2" id="Exile">
-                    <h1 style="color: white; text-align: center">Exile</h1>
+                    <h1 class="nameDisplay">Exile</h1>
                 </div>
 
                 
             </div>
             <div class="row">
                 <div class="col-4" id="Imperial">
-                    <h1 style="color: white; text-align: center">Imperial</h1>
+                    <h1 class="nameDisplay">Imperial</h1>
                 </div>
             
                 <div class="col-3" id="Ninja">
-                    <h1 style="color: white; text-align: center ">Ninja</h1>
+                    <h1 class="nameDisplay">Ninja</h1>
                 </div>
             
                 <div class="col-3" id="Phantom">
-                    <h1 style="color: white; text-align: center">Phantom</h1>
+                    <h1 class="nameDisplay">Phantom</h1>
                 </div>
 
                 <div class="col-2" id="Robot">
-                    <h1 style="color: white; text-align: center">Robot</h1>
+                    <h1 class="nameDisplay">Robot</h1>
                 </div>
             
             </div>
@@ -78,6 +76,60 @@
         </div>
     </template>
     
+    <template>
+        <div class="infoBox" id="Classes" style="display: none">
+            <div class="row">
+
+                <div class="col-4" id="Elementalist">
+                    <h1 class="nameDisplay">Elementalist</h1>
+                </div>
+                <div class="col-4" id="Brawler">
+                    <h1 class="nameDisplay">Brawler</h1>
+                </div>
+                <div class="col-4" id="Guardian">
+                    <h1 class="nameDisplay">Guardian</h1>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-4" id="Gunslinger">
+                    <h1 class="nameDisplay">Gunslinger</h1>
+                </div>
+                <div class="col-4" id="Ranger">
+                    <h1 class="nameDisplay">Ranger</h1>
+                </div>
+                <div class="col-4" id="Knight">
+                    <h1 class="nameDisplay">Knight</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-6" id="Shapeshifter">
+                    <h1 class="nameDisplay">Shapeshifter</h1>
+                </div>
+                <div class="col-6" id="Sorcerer">
+                    <h1 class="nameDisplay">Sorcerer</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-6" id="Assassin">
+                    <h1 class="nameDisplay">Assassin</h1>
+                </div>
+                <div class="col-6" id="Blademaster">
+                    <h1 class="nameDisplay">Blademaster</h1>
+                </div>
+
+            </div>
+            <h class="sheetTitle">Class</h>
+
+        </div>
+    </template>
 
 
 
@@ -96,9 +148,16 @@
         </div>   
     </div>
 </head>
-<body id="body" onkeydown="showOrigins(event)" onkeyup="hideOrigins(event)">
+<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)">
     <p style="color: aliceblue" id ="testMessage"></p>
     
+
+
+
+    <script src="class.js"></script>
+    <script src="origins.js"></script>
+
+
     <script>
         document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')
@@ -125,33 +184,47 @@
             remote.getCurrentWindow().close()
         }
 
-        document.addEventListener("keydown", showOrigins(event))
-        document.addEventListener("keyup", hideOrigins(event))
+       //edit this so work for other windows
+       
 
-        function hideOrigins(event){
+        function hideSheet(event)
+        {
             
-            if(event.key == "Tab"){
-                document.getElementById("testMessage").innerHTML = event.key
+            if(event.key == "Tab")
+            {
+                
                 document.getElementById("Origins").style.display = "none";
 
             }
-
-        }
-        
-        function showOrigins(event){
-            
-            if(event.key == "Tab"){
-                document.getElementById("testMessage").innerHTML = "tab pressed"
-                document.getElementById("Origins").style.display = "block";
+            if(event.key == "c")
+            {
+               // document.getElementById("testMessage").innerHTML = "c released";
+                document.getElementById("Classes").style.display = "none";
             }
 
         }
+        
+        function showSheet(event)
+        {
+            
+            if(event.key == "Tab")
+            {
+                
+                document.getElementById("Origins").style.display = "block";
+                document.getElementById("Classes").style.display = "none";
+            }
+
+            if(event.key == "c")
+            {
+               // document.getElementById("testMessage").innerHTML = "c pressed";
+                document.getElementById("Classes").style.display = "block";
+                document.getElementById("Origins").style.display = "none";
+            }
+        }
 
     </script>
-    <script src="origins.js">
-        
-        
-    </script>
 
+    
+    
 </body>
 </html> 

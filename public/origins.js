@@ -1,6 +1,6 @@
 
-const path = require('path')
-var temp, clone
+
+var originsTemp, originsClone
 
 var championPath = __dirname.replace("public", "resources/champIcons")
 //championPath = path.join(championPath, )
@@ -23,8 +23,8 @@ var WILD = ["Tristana", "Lulu", "Kennen", "Poppy", "Veigar", "Gnar"]
 var YORDLE =["Nidalee", "Warwick", "Ahri", "Rengar", "Gnar"]
 
 
-temp = document.getElementsByTagName("template")[0]
-clone = document.importNode(temp.content, true)
+originsTemp = document.getElementsByTagName("template")[0]
+originsClone = document.importNode(originsTemp.content, true)
 
 
     
@@ -86,14 +86,92 @@ for(var x = 0; x < ORDEROFORIGIN.length; x++){
         var img = document.createElement('img')
         img.setAttribute('class', 'champIcon')
         img.src = championPath + "/" + origin[i] +".png"
-        clone.getElementById(ORDEROFORIGIN[x]).appendChild(img)
+        originsClone.getElementById(ORDEROFORIGIN[x]).appendChild(img)
         
     }
     
 
 }
 
-document.body.appendChild(clone)
+document.body.appendChild(originsClone)
+
+
+
+
+
+
+
+// var CLASSORDER = [ "Elementalist", "Brawler", "Guardian", "Gunslinger", "Ranger", "Knight", "Shapeshifter", "Sorcerer", "Assassin", "Blademaster"]
+
+// var ELEMENTALIST = ["Lissandra", "Kennen", "Brand", "Anivia"]
+// var BRAWLER = ["Warwick", "Blitzcrank", "Rek'Sai", "Vi", "Volibear", "ChoGath"]
+// var GUNSLINGER = ["Graves", "Tristana", "Lucian", "Gangplank", "Jinx", "Missfortune"]
+// var GUARDIAN = ["Braum", "Leona", "Pantheon"]
+// var RANGER = ["Vayne", "Varus", "Ashe", "Kindred", "Kai'Sa"]
+// var KNIGHT = ["Darius", "Garen", "Mordekaiser", "Poppy", "Sejuani", "Kayle"]
+// var SHAPESHIFTER = ["Elise", "Nidalee", "Jayce", "Shyvana", "Gnar", "Swain"]
+// var SORCERER = ["Kassadin", "Ahri", "Lulu", "Twisted_Fate", "Morgana", "Veigar", "Aurelion_Sol", "Karthus"]
+// var ASSASSIN = ["Kha'Zix", "Pyke", "Zed", "Evelynn", "Katarina", "Rengar", "Akali", "Kai'Sa"]
+// var BLADEMASTER = ["Camille", "Fiora", "Shen", "Aatrox", "Gangplank", "Draven", "Yasuo"]
+
+
+// temp = document.getElementsByTagName("template")[1]
+// clone = document.importNode(temp.content, true)
+
+
+// for(var x = 0; x < CLASSORDER.length; x++){
+    
+//     var champClass
+
+//     switch(x){
+//         case 0:
+//             champClass = ELEMENTALIST
+//             break;
+//         case 1:
+//             champClass = BRAWLER
+//             break;
+//         case 2:
+//             champClass = GUNSLINGER
+//             break;
+//         case 3:
+//             champClass = GUARDIAN
+//             break;
+//         case 4:
+//             champClass = RANGER
+//             break;
+//         case 5:
+//             champClass = KNIGHT
+//             break;
+//         case 6:
+//             champClass = SHAPESHIFTER
+//             break;
+//         case 7:
+//             champClass = SORCERER
+//             break;
+//         case 8:
+//             champClass = ASSASSIN
+//             break;
+//         case 9:
+//             champClass = BLADEMASTER
+//             break;
+//         default:
+//             break;
+//     }
+
+//     for(var i = 0; i < champClass.length; i++)
+//     {
+        
+//         var img = document.createElement('img')
+//         img.setAttribute('class', 'champIcon')
+//         img.src = championPath + "/" + champClass[i] +".png"
+//         clone.getElementById(CLASSORDER[x]).appendChild(img)
+        
+//     }
+    
+
+// }
+
+// document.body.appendChild(clone)
 
 
 

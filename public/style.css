@@ -113,7 +113,7 @@ color: white;
     color: white;
     position: absolute;
     bottom: 100%;
-    left: 45%;
+    left: 47%;
     font-size: 32px;
   }
 
@@ -181,8 +181,15 @@ color: white;
     height: 7vh;
     width: 3.5vw;
     align-content: center;
+    border-style: solid;
+    border-color: #FFF;
+    border-width: 0.5%;
   }
   
+  .nameDisplay{
+    color: white;
+    text-align: center;
+  }
 
   
 
