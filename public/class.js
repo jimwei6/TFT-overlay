@@ -69,7 +69,11 @@ for(var x = 0; x < CLASSORDER.length; x++){
         classClone.getElementById(CLASSORDER[x]).appendChild(img)
         
     }
-    
+    var textClass = document.createElement('p')
+    textClass.innerHTML =  "Testing descriptions for different classes and origins"
+    textClass.style.color="white"
+    classClone.getElementById(CLASSORDER[x]).appendChild(textClass)
+
 
 }
 

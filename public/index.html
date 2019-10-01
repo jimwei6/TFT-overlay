@@ -131,6 +131,47 @@
         </div>
     </template>
 
+    <!-- <template> -->
+        <div class="infoBox" id="Itemizations">
+            <div class="row">
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-4">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                
+            </div>
+            
+
+        </div>
+    <!-- </template> -->
 
 
 
@@ -154,18 +195,19 @@
 
 
 
-    <script src="class.js"></script>
-    <script src="origins.js"></script>
+    <!-- <script src="class.js"></script>
+    <script src="origins.js"></script> -->
 
 
     <script>
         document.getElementById("testMessage").innerHTML = "on working"
-        const electron = require('electron')
+        const electron = require('electron')            
         const remote = electron.remote
-        const ioHook = require('iohook');
         var mouseEnable = false;
 
         var scrollbar = document.getElementById("myRange")
+        var tabDown = false
+        var cDown = flase
 
         scrollbar.oninput = function() {
             var value = parseFloat(this.value/100, 10)
@@ -194,14 +236,18 @@
             {
                 
                 document.getElementById("Origins").style.display = "none";
+                tabDown = false
 
             }
             if(event.key == "c")
             {
                // document.getElementById("testMessage").innerHTML = "c released";
                 document.getElementById("Classes").style.display = "none";
+                cDown = false
             }
-
+            if(!(tabDown && cDown)){
+                clickD()
+            }
         }
         
         function showSheet(event)
@@ -212,6 +258,7 @@
                 
                 document.getElementById("Origins").style.display = "block";
                 document.getElementById("Classes").style.display = "none";
+                tabDown = true
             }
 
             if(event.key == "c")
@@ -219,7 +266,9 @@
                // document.getElementById("testMessage").innerHTML = "c pressed";
                 document.getElementById("Classes").style.display = "block";
                 document.getElementById("Origins").style.display = "none";
+                cDown = true
             }
+            clickE()
         }
 
     </script>
