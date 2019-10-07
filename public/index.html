@@ -2,7 +2,8 @@
 <html lang="en">
 <head id="head">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <script>window.$ = window.jQuery = require('jquery');</script>
+
     <template>
         <div class="infoBox" id="Origins"  style="display: none">
            
@@ -134,41 +135,110 @@
     <!-- <template> -->
         <div class="infoBox" id="Itemizations">
             <div class="row">
-                <div class="col-4">
+                <div class="col-20">
+                    <svg id="overlay">
+                        <line id="line1" style="stroke:white; stroke-width:2"></line>
+                    </svg>
+
                     <h1 class="nameDisplay">testing</h1>
+
+                    <div class="mainItem">
+                        <img id="firstDiv" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                   <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
+                    <div class="subItem">
+                        <img id="lastDiv" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                    </div>
                 </div>
-                <div class="col-4">
+                <div class="col-20">
+                        <svg id="overlay">
+                            <line id="line2" style="stroke:white; stroke-width:2"></line>
+                        </svg>
+    
+                        <h1 class="nameDisplay">testing</h1>
+    
+                        <div class="mainItem">
+                            <img id="firstDiv2" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                       <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                        <div class="subItem">
+                            <img id="lastDiv2" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
+                        </div>
+                    </div>
+                <div class="col-20">
                     <h1 class="nameDisplay">testing</h1>
                     </div>
-                <div class="col-4">
+                <div class="col-20">
+                    <h1 class="nameDisplay">testing</h1>
+                    </div>
+                <div class="col-20">
                     <h1 class="nameDisplay">testing</h1>
                     </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <h1 class="nameDisplay">testing</h1>
                     </div>
-                <div class="col-4">
+                <div class="col-3">
                     <h1 class="nameDisplay">testing</h1>
                     </div>
-                <div class="col-4">
+                <div class="col-3">
+                    <h1 class="nameDisplay">testing</h1>
+                </div>
+                <div class="col-3">
                     <h1 class="nameDisplay">testing</h1>
                 </div>
                 
             </div>
-            <div class="row">
-                <div class="col-4">
-                    <h1 class="nameDisplay">testing</h1>
-                    </div>
-                <div class="col-4">
-                    <h1 class="nameDisplay">testing</h1>
-                    </div>
-                <div class="col-4">
-                    <h1 class="nameDisplay">testing</h1>
-                    </div>
-                
-            </div>
-            
+           
 
         </div>
     <!-- </template> -->
@@ -189,18 +259,18 @@
         </div>   
     </div>
 </head>
-<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)">
+<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)" onresize="manageLines()">
     <p style="color: aliceblue" id ="testMessage"></p>
     
-
-
+    <p style="color: aliceblue" id ="testMessage2"></p>
+    <p style="color: aliceblue" id ="testMessage3"></p>
 
     <!-- <script src="class.js"></script>
     <script src="origins.js"></script> -->
 
 
     <script>
-        document.getElementById("testMessage").innerHTML = "on working"
+        //document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')            
         const remote = electron.remote
         var mouseEnable = false;
@@ -263,7 +333,7 @@
 
             if(event.key == "c")
             {
-               // document.getElementById("testMessage").innerHTML = "c pressed";
+               // 
                 document.getElementById("Classes").style.display = "block";
                 document.getElementById("Origins").style.display = "none";
                 cDown = true
@@ -273,7 +343,47 @@
 
     </script>
 
+    <script>
+
+        document.getElementById("testMessage").innerHTML = "test started"
+        var icon = $(".itemIcon")
+        var LINE = require('./lines.js')
+              
+        function manageLines(){
+
+            
+            
+            
+            var div1 = $('#firstDiv');
+            var div2 = $('#lastDiv');
+
+            var div3 = $('#firstDiv2');
+            var div4 = $('#lastDiv2');
+
+            var line1r = new LINE.itemLines(div1.offset().left, div1.offset().top, div1.offset().left, div2.offset().top, $('#line1'))
+            var line2r =new LINE.itemLines(div3.offset().left, div3.offset().top, div3.offset().left, div4.offset().top, $('#line2'))
+
+            var loil = [line1r, line2r, "empty"]
+
+            LINE.renderLines(loil);
+            
+           
+           
+
     
+    //         
+    //         //  document.getElementById("testMessage").innerHTML = pos1.left + " " + parseFloat(iconWidth)
+    //         line1
+    //             .attr('x1', (pos1.left + 0.5* parseFloat(icon.css('width'))))
+    //             .attr('y1', (pos1.top + parseFloat(icon.css('height'))))
+    //             .attr('x2', (pos1.left + 0.5* parseFloat(icon.css('width'))))
+    //             .attr('y2', (pos2.top + 0.5 * parseFloat(icon.css('height'))))
+
+        }
+    //    manageLines()
+
+
+    </script>
     
 </body>
 </html> 

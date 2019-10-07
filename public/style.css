@@ -124,7 +124,7 @@ color: white;
 
   [class*="col-"] {
     float: left;
-    padding: 0vh;
+    padding: 1vh;
     min-height: 20vh;
     border: 1px solid red;
     text-align: center;
@@ -166,6 +166,7 @@ color: white;
 
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
+  .col-20{width: 20%;}
   .col-3 {width: 25%;}
   .col-4 {width: 33.33%;}
   .col-5 {width: 41.66%;}
@@ -176,6 +177,7 @@ color: white;
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+  
 
   .champIcon{
     height: 7vh;
@@ -190,6 +192,32 @@ color: white;
     color: white;
     text-align: center;
   }
-
-  
-
+ .itemIcon{
+   /* display: block; */
+   height: 4vh;
+   width: 2vw;
+   align-self: left;
+   border-style: solid;
+   border-color: #FFF;
+   border-width: 0.1vw;
+   -webkit-user-select: none;
+ }
+ .mainItem{
+   position: relative;
+   left: 2vw;
+   height: 4vh;
+   width: 2vw;
+ }
+ .subItem{
+   position: relative;
+   margin-left: 4vw;
+   height: 4vh;
+   width: 2vw;
+ }
+ #overlay{
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0vh;
+   left: 0vw;
+ }

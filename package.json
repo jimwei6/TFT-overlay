@@ -19,5 +19,7 @@
   "devDependencies": {
     "electron": "^6.0.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
