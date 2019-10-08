@@ -132,116 +132,44 @@
         </div>
     </template>
 
-    <!-- <template> -->
-        <div class="infoBox" id="Itemizations">
+    <template>
+        <div class="infoBox" id="Itemizations" style="display: none">
+
             <div class="row">
-                <div class="col-20">
-                    <svg id="overlay">
-                        <line id="line1" style="stroke:white; stroke-width:2"></line>
-                    </svg>
-
-                    <h1 class="nameDisplay">testing</h1>
-
-                    <div class="mainItem">
-                        <img id="firstDiv" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                   <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
-                    <div class="subItem">
-                        <img id="lastDiv" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                    </div>
+                <div class="col-20" id="B._F._Sword">     
                 </div>
-                <div class="col-20">
-                        <svg id="overlay">
-                            <line id="line2" style="stroke:white; stroke-width:2"></line>
-                        </svg>
-    
-                        <h1 class="nameDisplay">testing</h1>
-    
-                        <div class="mainItem">
-                            <img id="firstDiv2" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                       <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
-                        <div class="subItem">
-                            <img id="lastDiv2" class="itemIcon" src="../resources/itemIcons/B._F._Sword.png">
-                        </div>
+                <div class="col-20" id="Recurve_Bow">
                     </div>
-                <div class="col-20">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-20"  id="Needlessly_Large_Rod">
+                    
                     </div>
-                <div class="col-20">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-20" id="Tear_of_the_Goddess">
+                
                     </div>
-                <div class="col-20">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-20"  id="Chain_Vest">
+                
                     </div>
             </div>
+
             <div class="row">
-                <div class="col-3">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-3"  id="Negatron_Cloak">
+                   
                     </div>
-                <div class="col-3">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-3" id="Giant's_Belt">
+                    
                     </div>
-                <div class="col-3">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-3" id="Sparring_Gloves">
+                   
                 </div>
-                <div class="col-3">
-                    <h1 class="nameDisplay">testing</h1>
+                <div class="col-3"  id="Spatula">
+                    
                 </div>
                 
             </div>
            
 
         </div>
-    <!-- </template> -->
+    </template>
 
 
 
@@ -265,8 +193,8 @@
     <p style="color: aliceblue" id ="testMessage2"></p>
     <p style="color: aliceblue" id ="testMessage3"></p>
 
-    <!-- <script src="class.js"></script>
-    <script src="origins.js"></script> -->
+    <script src="class.js"></script>
+    <script src="origins.js"></script>
 
 
     <script>
@@ -277,12 +205,13 @@
 
         var scrollbar = document.getElementById("myRange")
         var tabDown = false
-        var cDown = flase
+        var cDown = false
+        var sDown = false
 
         scrollbar.oninput = function() {
             var value = parseFloat(this.value/100, 10)
             document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")"
-            //document.getElementById("head").style.opacity = value;
+            document.getElementById("head").style.opacity = value;
         }
         
         function clickE(){
@@ -296,12 +225,15 @@
             remote.getCurrentWindow().close()
         }
 
-       //edit this so work for other windows
-       
+//edit this so work for other windows
+    
 
         function hideSheet(event)
         {
-            
+            if(event.key == "s"){
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+            }
             if(event.key == "Tab")
             {
                 
@@ -322,20 +254,28 @@
         
         function showSheet(event)
         {
+            if(event.key == "s"){
+                document.getElementById("Itemizations").style.display = "block"
+                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Classes").style.display = "none"
+                sDown = true
+            }
             
             if(event.key == "Tab")
             {
                 
-                document.getElementById("Origins").style.display = "block";
-                document.getElementById("Classes").style.display = "none";
+                document.getElementById("Origins").style.display = "block"
+                document.getElementById("Classes").style.display = "none"
+                document.getElementById("Itemizations").style.display = "none"
                 tabDown = true
             }
 
             if(event.key == "c")
             {
                // 
-                document.getElementById("Classes").style.display = "block";
-                document.getElementById("Origins").style.display = "none";
+                document.getElementById("Classes").style.display = "block"
+                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Itemizations").style.display = "none"
                 cDown = true
             }
             clickE()
@@ -343,7 +283,11 @@
 
     </script>
 
-    <script>
+    <script src="items.js">
+        
+    </script>
+
+    <!-- <script>
 
         document.getElementById("testMessage").innerHTML = "test started"
         var icon = $(".itemIcon")
@@ -371,19 +315,13 @@
            
 
     
-    //         
-    //         //  document.getElementById("testMessage").innerHTML = pos1.left + " " + parseFloat(iconWidth)
-    //         line1
-    //             .attr('x1', (pos1.left + 0.5* parseFloat(icon.css('width'))))
-    //             .attr('y1', (pos1.top + parseFloat(icon.css('height'))))
-    //             .attr('x2', (pos1.left + 0.5* parseFloat(icon.css('width'))))
-    //             .attr('y2', (pos2.top + 0.5 * parseFloat(icon.css('height'))))
+
 
         }
     //    manageLines()
 
 
-    </script>
+    </script> -->
     
 </body>
 </html> 

@@ -124,7 +124,7 @@ color: white;
 
   [class*="col-"] {
     float: left;
-    padding: 1vh;
+    padding: 0.5vh;
     min-height: 20vh;
     border: 1px solid red;
     text-align: center;
@@ -191,6 +191,7 @@ color: white;
   .nameDisplay{
     color: white;
     text-align: center;
+    font-size: calc(0.78em + 0.24vw)
   }
  .itemIcon{
    /* display: block; */
@@ -199,7 +200,7 @@ color: white;
    align-self: left;
    border-style: solid;
    border-color: #FFF;
-   border-width: 0.1vw;
+   border-width: 0.09vw;
    -webkit-user-select: none;
  }
  .mainItem{
@@ -210,9 +211,9 @@ color: white;
  }
  .subItem{
    position: relative;
-   margin-left: 4vw;
+   left: 4vw;
    height: 4vh;
-   width: 2vw;
+   width: 8vw;
  }
  #overlay{
    position: fixed;
