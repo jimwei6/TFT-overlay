@@ -5,7 +5,7 @@
     overflow: hidden;
     -webkit-app-region: no-drag;   
 } 
-html { font-size: calc(0.5em + 0.25vw) }
+html { font-size: calc(0.40em) }
 /* .draggable{
   height: 40px;
   width: 40px;
@@ -122,12 +122,21 @@ color: white;
     box-sizing: border-box;
   }
 
-  [class*="col-"] {
+  [class*="col-c"] {
     float: left;
-    padding: 0.5vh;
-    min-height: 20vh;
-    border: 1px solid red;
+    padding-bottom: 1vh;
     text-align: center;
+    min-height: 22.75vh;
+    max-height: 22.75vh;
+    border: 0.25vh solid lightgrey;
+  }
+  [class*="col-i"] {
+    float: left;
+    padding-bottom: 1vh;
+    text-align: center;
+    min-height: 45.5vh;
+    max-height: 45.5vh;
+    border: 0.25vh solid lightgrey;
   }
 
   .row::after {
@@ -164,24 +173,38 @@ color: white;
   .Wild{ grid-area: wild;}
   .Yordle{ grid-area: yordle;} */
 
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-20{width: 20%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
+  .col-c1 {width: 8.33%;}
+  .col-c2 {width: 16.66%;}
+  .col-c20{width: 20%;}  
+  .col-c3 {width: 25%;}
+  .col-c4 {width: 33.33%;}
+  .col-c5 {width: 41.66%;}
+  .col-c6 {width: 50%;}
+  .col-c7 {width: 58.33%;}
+  .col-c8 {width: 66.66%;}
+  .col-c9 {width: 75%;}
+  .col-c10 {width: 83.33%;}
+  .col-c11 {width: 91.66%;}
+  .col-c12 {width: 100%;}
   
 
+  .col-i1 {width: 8.33%;}
+  .col-i2 {width: 16.66%;}
+  .col-i20{width: 20%;}  
+  .col-i3 {width: 25%;}
+  .col-i4 {width: 33.33%;}
+  .col-i5 {width: 41.66%;}
+  .col-i6 {width: 50%;}
+  .col-i7 {width: 58.33%;}
+  .col-i8 {width: 66.66%;}
+  .col-i9 {width: 75%;}
+  .col-i10 {width: 83.33%;}
+  .col-i11 {width: 91.66%;}
+  .col-i12 {width: 100%;}
+
   .champIcon{
-    height: 7vh;
-    width: 3.5vw;
+    height: 6vh;
+    width: 3vw;
     align-content: center;
     border-style: solid;
     border-color: #FFF;
@@ -191,7 +214,7 @@ color: white;
   .nameDisplay{
     color: white;
     text-align: center;
-    font-size: calc(0.78em + 0.24vw)
+    font-size:   calc(0.36vh + 0.64vw);
   }
  .itemIcon{
    /* display: block; */
@@ -221,4 +244,10 @@ color: white;
    height: 100%;
    top: 0vh;
    left: 0vw;
+ }
+
+ .compDescript{
+   color:white;
+   text-align: center;
+   font-size:  calc(0.64vh + 0.36vw);
  }

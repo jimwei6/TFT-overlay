@@ -1,82 +1,84 @@
 
-var classTemp, classClone
+var classTemp, classClone, OriginsTemp, OriginsClone
 
 var championPath = __dirname.replace("public", "resources/champIcons")
 
-var CLASSORDER = [ "Elementalist", "Brawler", "Guardian", "Gunslinger", "Ranger", "Knight", "Shapeshifter", "Sorcerer", "Assassin", "Blademaster"]
+const comps = require('../data/comps.json') //json file where info is stored
 
-var ELEMENTALIST = ["Lissandra", "Kennen", "Brand", "Anivia"]
-var BRAWLER = ["Warwick", "Blitzcrank", "Rek'Sai", "Vi", "Volibear", "ChoGath"]
-var GUNSLINGER = ["Graves", "Tristana", "Lucian", "Gangplank", "Jinx", "Missfortune"]
-var GUARDIAN = ["Braum", "Leona", "Pantheon"]
-var RANGER = ["Vayne", "Varus", "Ashe", "Kindred", "Kai'Sa"]
-var KNIGHT = ["Darius", "Garen", "Mordekaiser", "Poppy", "Sejuani", "Kayle"]
-var SHAPESHIFTER = ["Elise", "Nidalee", "Jayce", "Shyvana", "Gnar", "Swain"]
-var SORCERER = ["Kassadin", "Ahri", "Lulu", "Twisted_Fate", "Morgana", "Veigar", "Aurelion_Sol", "Karthus"]
-var ASSASSIN = ["Kha'Zix", "Pyke", "Zed", "Evelynn", "Katarina", "Rengar", "Akali", "Kai'Sa"]
-var BLADEMASTER = ["Camille", "Fiora", "Shen", "Aatrox", "Gangplank", "Draven", "Yasuo"]
+const champOrigins = comps[0].origins // shows all {} origins
+const  champClass = comps[1].class  // shows all {} classes
 
 
-classTemp = document.getElementsByTagName("template")[1]
-classClone = document.importNode(classTemp.content, true)
 
+classTemp = document.getElementsByTagName("template")[1] //template of class
+classClone = document.importNode(classTemp.content, true) //cloning template
 
-for(var x = 0; x < CLASSORDER.length; x++){
+OriginsTemp = document.getElementsByTagName("template")[0] //template of origins
+OriginsClone = document.importNode(OriginsTemp.content, true) //cloning template
+
+displayComps(champClass, classClone);
+
+displayComps(champOrigins, OriginsClone);
+
+//pass in list of origins and display on html
+function displayComps(compList, template){
     
-    var champClass
-
-    switch(x){
-        case 0:
-            champClass = ELEMENTALIST
-            break;
-        case 1:
-            champClass = BRAWLER
-            break;
-        case 2:
-            champClass = GUNSLINGER
-            break;
-        case 3:
-            champClass = GUARDIAN
-            break;
-        case 4:
-            champClass = RANGER
-            break;
-        case 5:
-            champClass = KNIGHT
-            break;
-        case 6:
-            champClass = SHAPESHIFTER
-            break;
-        case 7:
-            champClass = SORCERER
-            break;
-        case 8:
-            champClass = ASSASSIN
-            break;
-        case 9:
-            champClass = BLADEMASTER
-            break;
-        default:
-            break;
-    }
-
-    for(var i = 0; i < champClass.length; i++)
-    {
+    compList.forEach(function(comp){
         
-        var img = document.createElement('img')
-        img.setAttribute('class', 'champIcon')
-        img.src = championPath + "/" + champClass[i] +".png"
-        classClone.getElementById(CLASSORDER[x]).appendChild(img)
+        addImages(comp, comp.champions, template)
         
-    }
-    var textClass = document.createElement('p')
-    textClass.innerHTML =  "Testing descriptions for different classes and origins"
-    textClass.style.color="white"
-    classClone.getElementById(CLASSORDER[x]).appendChild(textClass)
+        addDescript(comp, template)
 
+        addTiers(comp, template)
+        
+    })
+    
+    document.body.appendChild(template)
+    
+}
+
+
+// adds all champion icons for a single origin  assume originChamps list wont be empty
+// takes in whole origin {} and origin.champions
+function addImages(comp, compChamps, template){
+
+    var img = document.createElement('img')
+    img.setAttribute('class', 'champIcon')
+    img.src = championPath + "/" + compChamps[0] +".png"
+    template.getElementById(comp.name).appendChild(img)
+    
+    if(compChamps.length == 1){
+        return;
+    }
+    else{
+        
+        addImages(comp, compChamps.slice(1), template)
+       
+    } 
 
 }
 
-document.body.appendChild(classClone)
+//add description for a single origin given a origin
+function addDescript(comp, template){
+    if(comp.description != ""){
+        var textClass = document.createElement('p')
+        textClass.setAttribute("class", "compDescript")
+        textClass.innerHTML = comp.description
+        textClass.style.color="white"
+        template.getElementById(comp.name).appendChild(textClass)
+    }
+   
+
+}
+
+function addTiers(comp, template){
+    var tier = document.createElement('p')
+    tier.setAttribute("class", "compDescript")
+    var tierStr = comp.tiers
+    tierStr = tierStr.bold()
+    tier.innerHTML = tierStr
+    tier.style.color="white"
+    template.getElementById(comp.name).appendChild(tier)
+}
 
 
