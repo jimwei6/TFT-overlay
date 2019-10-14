@@ -189,7 +189,7 @@ color: white;
   .col-c12 {width: 100%;}
   
 
-  .col-i1 {width: 8.33%;}
+  .col-i1 {width: 8.33%; }
   .col-i2 {width: 16.66%;}
   .col-i20{width: 20%;}  
   .col-i3 {width: 25%;}
@@ -234,8 +234,8 @@ color: white;
    width: 2vw;
  }
  .subItem{
-   position: relative;
-   left: 4vw;
+    position: relative;
+   left: 4vw; 
    height: 4vh;
    width: 8vw;
  }

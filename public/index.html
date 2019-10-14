@@ -5,7 +5,7 @@
     <script>window.$ = window.jQuery = require('jquery');</script>
 
     <template>
-        <div class="infoBox" id="Origins"  style="display: none">
+        <div class="infoBox" id="Origins"  style="display: block">
            
             <div class="row">
                 <div class="col-c4" id="Demon" >
@@ -190,7 +190,7 @@
 </head>
 
 
-<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event, false)" onresize="hideSheet(event, true)">
+<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)" onresize="hideSheet(event)">
     <p style="color: aliceblue; font-size: 10px;" id ="testMessage"></p>
     
     <p style="color: aliceblue" id ="testMessage2"></p>
@@ -232,18 +232,20 @@
 //edit this so work for other windows
     
 
-        function hideSheet(event, bool)
+        function hideSheet(event)
         {
-            if(bool == true){ ///end up reopening window each time to prevent visual bugs
-                document.getElementById("Itemizations").style.display = "none"
-                sDown = false
-                document.getElementById("Itemizations").style.display = "none"
-                sDown = false
-                document.getElementById("Itemizations").style.display = "none"
-                sDown = false
-                clickD()
-            }
-            else{
+            // if(bool == true){ ///end up reopening window each time to prevent visual bugs
+            //     document.getElementById("Itemizations").style.display = "none"
+            //     sDown =c false
+            //     document.getElementById("Itemizations").style.display = "none"
+            //     sDown = false
+            //     document.getElementById("Itemizations").style.display = "none"
+            //     sDown = false
+            //     clickD()
+            // }
+            // else{
+
+                
                 if(event.key == "s"){
                     document.getElementById("Itemizations").style.display = "none"
                     sDown = false
@@ -253,7 +255,7 @@
                     
                     document.getElementById("Itemizations").style.display = "none"
                     sDown = false
-
+                   
                 }
                 if(event.key == "c")
                 {
@@ -264,8 +266,9 @@
                 if(!(tabDown && cDown && sDown)){
                     clickD()
                 }
+                document.getElementById("testMessage").innerHTML = document.getElementById("Itemizations").style.display
             }
-        }
+        //}
         
         function showSheet(event)
         {
