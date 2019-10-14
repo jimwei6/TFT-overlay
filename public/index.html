@@ -190,7 +190,7 @@
 </head>
 
 
-<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)">
+<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event, false)" onresize="hideSheet(event, true)">
     <p style="color: aliceblue; font-size: 10px;" id ="testMessage"></p>
     
     <p style="color: aliceblue" id ="testMessage2"></p>
@@ -232,18 +232,18 @@
 //edit this so work for other windows
     
 
-        function hideSheet(event)
+        function hideSheet(event, bool)
         {
-            // if(bool == true){ ///end up reopening window each time to prevent visual bugs
-            //     document.getElementById("Itemizations").style.display = "none"
-            //     sDown =c false
-            //     document.getElementById("Itemizations").style.display = "none"
-            //     sDown = false
-            //     document.getElementById("Itemizations").style.display = "none"
-            //     sDown = false
-            //     clickD()
-            // }
-            // else{
+            if(bool == true){ ///end up reopening window each time to prevent visual bugs
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+                clickD()
+            }
+            else{
 
                 
                 if(event.key == "s"){
@@ -253,22 +253,22 @@
                 if(event.key == "Tab")
                 {
                     
-                    document.getElementById("Itemizations").style.display = "none"
+                    document.getElementById("Origins").style.display = "none"
                     sDown = false
                    
                 }
                 if(event.key == "c")
                 {
                 // document.getElementById("testMessage").innerHTML = "c released";
-                    document.getElementById("Itemizations").style.display = "none"
+                    document.getElementById("Classes").style.display = "none"
                     sDown = false
                 }
                 if(!(tabDown && cDown && sDown)){
                     clickD()
                 }
-                document.getElementById("testMessage").innerHTML = document.getElementById("Itemizations").style.display
+                
             }
-        //}
+        }
         
         function showSheet(event)
         {
