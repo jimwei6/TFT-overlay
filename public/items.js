@@ -67,51 +67,194 @@
 
 </div> */
 
+const itemInfo = require("../data/items.json")
+
+const baseItems = itemInfo[0].baseItems
+
+const mainItems = itemInfo[1].mainItems
+
+const LINE = require("./lines.js")
+
+const svgNS = 'http://www.w3.org/2000/svg'
+
 var itemsPath = __dirname.replace("public", "resources/itemIcons")
 
 var itemsTemp = document.getElementsByTagName("template")[2]
 var itemsClone = document.importNode(itemsTemp.content, true)
 
-var MAINITEMS = ["B._F._Sword", "Recurve_Bow", "Needlessly_Large_Rod", "Tear_of_the_Goddess", "Chain_Vest", "Negatron_Cloak", "Giant's_Belt", "Sparring_Gloves", "Spatula"]
+displaySheet(baseItems)
+document.body.appendChild(itemsClone)
 
-for(var i = 0; i < MAINITEMS.length; i++){
 
-    var title = document.createElement('h1')
-    title.innerHTML = MAINITEMS[i]
-    title.setAttribute("class", "nameDisplay")
-    itemsClone.getElementById(MAINITEMS[i]).appendChild(title)
 
+
+//display the whole sheet
+function displaySheet(baseItems){
+
+    baseItems.forEach(function(baseItem) {
+
+        displayItemBlock(baseItem)
+        
+    });
+
+}
+
+function displayItemBlock(baseItem){
+
+   
+    displayTitle(baseItem)
+
+    displayBaseItem(baseItem)
+
+    baseItems.forEach(function(item) {
+
+        displaySubsets(item, formItems(baseItem, item) , baseItem )
+
+        
+    });
+
+
+
+}
+/* <img src="../resources/itemIcons/B._F._Sword.png" style="float:left">
+<svg width="50%" height="2vh">
+    <line x1="0" y1="1vh" x2="50%" y2="1vh" class="lines"></line>
+</svg>
+ <img src="../resources/itemIcons/B._F._Sword.png" style="float:right"> */
+
+ function connetSubs(){
+    
+    var svg = document.createElementNS(svgNS, 'svg')
+    svg.setAttribute('width', "4vw")
+    svg.setAttribute('height', "2vh")
+
+    var line = document.createElementNS(svgNS, 'line')
+    line.setAttribute('class', 'lines')
+    line.setAttribute('x1', "0")
+    line.setAttribute('y1', "2vh")
+    line.setAttribute('x2', "4vw")
+    line.setAttribute('y2', "2vh")
+
+    svg.appendChild(line)
+
+    return svg
+ }
+
+//decides which item is formed based on number and matrix in items.json
+function formItems(baseItem, subBaseItem){
+
+    if(subBaseItem.itemNum < baseItem.itemNum)
+    {
+        forgedItem = mainItems[subBaseItem.itemNum][Math.abs(subBaseItem.itemNum - baseItem.itemNum)]
+    }
+    else
+    {
+        forgedItem = mainItems[baseItem.itemNum][subBaseItem.itemNum - baseItem.itemNum]
+    }
+
+    return forgedItem
+
+}
+
+
+// take in base item  and main item to make a subset (item1 -> item 2)
+// assume the base item and main item are preconfig. Append to template location
+// where the 
+ function displaySubsets(subBaseItem, mainItem, baseItem){
+    var subDiv = document.createElement('div')
+    subDiv.setAttribute('class', 'subItem')
+
+    subDiv.appendChild(subImage(subBaseItem))
+    subDiv.appendChild(connetSubs())
+    subDiv.appendChild(subMainImage(mainItem))
+
+    itemsClone.getElementById(baseItem.name).appendChild(subDiv)
+
+ }
+
+
+
+
+// take an item and make it a sub image. image is returned
+ function subImage(SubBaseItem){
+
+    var subImg = document.createElement('img')
+    subImg.setAttribute('class', 'itemIcon')
+    subImg.src = itemsPath  + "/" + SubBaseItem.name +".png"
+    subImg.style.cssFloat = "left"
+
+    return subImg
+ }
+
+ // take a mainitem and make it an image. image is returned
+ function subMainImage(mainItem){
+
+    var mainImg = document.createElement('img')
+    mainImg.setAttribute('class', 'itemIcon')
+    mainImg.style.cssFloat ="right"
+    mainImg.src = itemsPath + "/" + mainItem.name + ".png"
+    return mainImg
+ }
+
+// takes a single base item and create make it the Main item
+function displayBaseItem(baseItem){
+    
     var div = document.createElement('div')
     div.setAttribute('class', 'mainItem')
 
     var img = document.createElement('img')
     img.setAttribute('class', 'itemIcon')
-    img.src = itemsPath + "/" + MAINITEMS[i] +".png"
-
-    div.appendChild(img)
-    itemsClone.getElementById(MAINITEMS[i]).appendChild(div)
-
-    for(var x = 0; x < MAINITEMS.length; x++){
-        var subDiv = document.createElement('div')
-        subDiv.setAttribute('class', 'subItem')
-
-        var subImg = document.createElement('img')
-        subImg.setAttribute('class', 'itemIcon')
-        subImg.src = itemsPath  + "/" + MAINITEMS[x] +".png"
-        subImg.style.cssFloat = "left"
-        
-       
-        var addImg = document.createElement('img')
-        addImg.setAttribute('class', 'itemIcon')
-        addImg.style.cssFloat ="right"
-        addImg.src = itemsPath + "/" + MAINITEMS[i] + ".png"
-        
-
-        subDiv.appendChild(subImg)
-        subDiv.appendChild(addImg)
-        itemsClone.getElementById(MAINITEMS[i]).appendChild(subDiv)
-    }
+    img.src = itemsPath + "/" + baseItem.name + ".png"
     
+    div.appendChild(img)
+    
+    itemsClone.getElementById(baseItem.name).appendChild(div)
 }
 
-document.body.appendChild(itemsClone)
+//takes a single base item and create a title (h1) for it
+function displayTitle(baseItem){
+
+    var title = document.createElement('h1')
+    title.innerHTML = baseItem.name
+    title.setAttribute("class", "nameDisplay")
+    itemsClone.getElementById(baseItem.name).appendChild(title)
+
+}
+
+
+// <!-- <script>
+
+//         document.getElementById("testMessage").innerHTML = "test started"
+//         var icon = $(".itemIcon")
+//         var LINE = require('./lines.js')
+              
+//         function manageLines(){
+
+            
+            
+            
+//             var div1 = $('#firstDiv');
+//             var div2 = $('#lastDiv');
+
+//             var div3 = $('#firstDiv2');
+//             var div4 = $('#lastDiv2');
+
+//             var line1r = new LINE.itemLines(div1.offset().left, div1.offset().top, div1.offset().left, div2.offset().top, $('#line1'))
+//             var line2r =new LINE.itemLines(div3.offset().left, div3.offset().top, div3.offset().left, div4.offset().top, $('#line2'))
+
+//             var loil = [line1r, line2r, "empty"]
+
+//             LINE.renderLines(loil);
+            
+           
+           
+
+    
+
+
+//         }
+//     //    manageLines()
+
+
+//     </script> -->
+    

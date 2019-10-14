@@ -131,37 +131,38 @@
 
         </div>
     </template>
-
-    <template>
+ 
+    <template> 
         <div class="infoBox" id="Itemizations" style="display: none">
 
             <div class="row">
                 <div class="col-i20" id="B._F._Sword">     
+              
                 </div>
                 <div class="col-i20" id="Recurve_Bow">
                     </div>
-                <div class="col-i20"  id="Needlessly_Large_Rod">
+                <div class="col-i20"  id="Chain_Vest">
                     
                     </div>
-                <div class="col-i20" id="Tear_of_the_Goddess">
+                <div class="col-i20" id="Negatron_Cloak">
                 
                     </div>
-                <div class="col-i20"  id="Chain_Vest">
+                <div class="col-i20"  id="Needlessly_Large_Rod">
                 
                     </div>
             </div>
 
             <div class="row">
-                <div class="col-i3"  id="Negatron_Cloak">
+                <div class="col-i3"  id="Tear_of_the_Goddess">
                    
                     </div>
                 <div class="col-i3" id="Giant's_Belt">
                     
                     </div>
-                <div class="col-i3" id="Sparring_Gloves">
+                <div class="col-i3" id="Spatula">
                    
                 </div>
-                <div class="col-i3"  id="Spatula">
+                <div class="col-i3"  id="Sparring_Gloves">
                     
                 </div>
                 
@@ -169,14 +170,14 @@
            
 
         </div>
-    </template>
+    </template> 
 
 
 
     <div>
         <div onmouseover="clickE()" onmouseout="clickD()" onclick="closeWindow()" class="closeBar"  id="closeBar" style="float: right">
             
-             <p id="x-shutOff">X</p>
+             <h id="x-shutOff">X</h>
             
             
         </div>
@@ -187,18 +188,21 @@
         </div>   
     </div>
 </head>
-<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event)" onresize="manageLines()">
-    <p style="color: aliceblue" id ="testMessage"></p>
+
+
+<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event, false)" onresize="hideSheet(event, true)">
+    <p style="color: aliceblue; font-size: 10px;" id ="testMessage"></p>
     
     <p style="color: aliceblue" id ="testMessage2"></p>
     <p style="color: aliceblue" id ="testMessage3"></p>
 
+    <script src="items.js"></script>
     <script src="class.js"></script>
-    <!-- <script src="origins.js"></script> --> 
+
 
 
     <script>
-        //document.getElementById("testMessage").innerHTML = "on working"
+        // document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')            
         const remote = electron.remote
         var mouseEnable = false;
@@ -228,27 +232,38 @@
 //edit this so work for other windows
     
 
-        function hideSheet(event)
+        function hideSheet(event, bool)
         {
-            if(event.key == "s"){
+            if(bool == true){ ///end up reopening window each time to prevent visual bugs
                 document.getElementById("Itemizations").style.display = "none"
                 sDown = false
-            }
-            if(event.key == "Tab")
-            {
-                
-                document.getElementById("Origins").style.display = "none";
-                tabDown = false
-
-            }
-            if(event.key == "c")
-            {
-               // document.getElementById("testMessage").innerHTML = "c released";
-                document.getElementById("Classes").style.display = "none";
-                cDown = false
-            }
-            if(!(tabDown && cDown && sDown)){
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
                 clickD()
+            }
+            else{
+                if(event.key == "s"){
+                    document.getElementById("Itemizations").style.display = "none"
+                    sDown = false
+                }
+                if(event.key == "Tab")
+                {
+                    
+                    document.getElementById("Itemizations").style.display = "none"
+                    sDown = false
+
+                }
+                if(event.key == "c")
+                {
+                // document.getElementById("testMessage").innerHTML = "c released";
+                    document.getElementById("Itemizations").style.display = "none"
+                    sDown = false
+                }
+                if(!(tabDown && cDown && sDown)){
+                    clickD()
+                }
             }
         }
         
@@ -259,6 +274,8 @@
                 document.getElementById("Origins").style.display = "none"
                 document.getElementById("Classes").style.display = "none"
                 sDown = true
+
+    
             }
             
             if(event.key == "Tab")
@@ -283,45 +300,17 @@
 
     </script>
 
-    <script src="items.js">
+   
         
-    </script>
-
-    <!-- <script>
-
-        document.getElementById("testMessage").innerHTML = "test started"
-        var icon = $(".itemIcon")
-        var LINE = require('./lines.js')
-              
-        function manageLines(){
-
-            
-            
-            
-            var div1 = $('#firstDiv');
-            var div2 = $('#lastDiv');
-
-            var div3 = $('#firstDiv2');
-            var div4 = $('#lastDiv2');
-
-            var line1r = new LINE.itemLines(div1.offset().left, div1.offset().top, div1.offset().left, div2.offset().top, $('#line1'))
-            var line2r =new LINE.itemLines(div3.offset().left, div3.offset().top, div3.offset().left, div4.offset().top, $('#line2'))
-
-            var loil = [line1r, line2r, "empty"]
-
-            LINE.renderLines(loil);
-            
-           
-           
-
-    
-
-
-        }
-    //    manageLines()
-
-
-    </script> -->
     
 </body>
 </html> 
+
+            
+<!-- document.getElementById("testMessage").innerHTML = "this is working!"
+
+var firstIcon = $('.itemIcon').eq(1).offset()
+
+    
+
+document.getElementById("testMessage").innerHTML = firstIcon.left -->

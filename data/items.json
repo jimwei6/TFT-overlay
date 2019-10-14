@@ -5,10 +5,10 @@
         {"name": "Chain_Vest", "itemNum": 2, "description": "+20 Armor"},
         {"name": "Negatron_Cloak", "itemNum": 3, "description": "+20 Magic Resist"},
         {"name": "Needlessly_Large_Rod", "itemNum": 4, "description": "+20% Spell Power"},
-        {"name": "Tear_of_the_Goddes", "itemNum": 5, "description": "+20 Starting mana"},
+        {"name": "Tear_of_the_Goddess", "itemNum": 5, "description": "+20 Starting mana"},
         {"name": "Giant's_Belt", "itemNum": 6, "description": "+200 Health"},
         {"name": "Spatula", "itemNum": 7, "description": "Special Ability when merged"},
-        {"name": "Sparring Gloves", "itemNum": 8, "description": "+10% Dodge & Crit chance"}
+        {"name": "Sparring_Gloves", "itemNum": 8, "description": "+10% Dodge & Crit chance"}
     ]},
 
     {"mainItems":[
@@ -20,7 +20,7 @@
             {"name": "Spear_of_Shojin", "itemNum": 15, "description": "After casting ability, basic attacks restore 15% of maximum mana per attack"},
             {"name": "Zeke's_Herald", "itemNum": 16, "description": "Wearer and allies within 2 hexes in the same row gain 15% bonus attack speed"},
             {"name": "Youmuu's_Ghostblade", "itemNum": 17, "description": "+15 attack damage. Wearer is also an Assassin"},
-            {"name": "Sparring_Gloves", "itemNum": 18, "description": "Critical Strike deals 125% damage"}],
+            {"name": "Infinity_Edge", "itemNum": 18, "description": "Critical Strike deals 125% damage"}],
 
         [{"name": "Rapid_Firecannon", "itemNum": 19, "description": "Attack Range is doubled"},
             {"name": "Phantom_Dancer", "itemNum": 20, "description": "Dodges all critical strikes"},
@@ -40,7 +40,7 @@
             {"name": "Iceborn_Gauntlet", "itemNum": 33, "description": "On dodge, creates a zone of ice that reduces enemies' attack speed by 35%"}],
 
         [{"name": "Dragon's_Claw", "itemNum": 34, "description": "Grants 75% resistance to magic damage"},
-            {"name": "Ionic_Spart", "itemNum": 35, "description": "When an enemy casts a spell, they take 125 damage"},
+            {"name": "Ionic_Spark", "itemNum": 35, "description": "When an enemy casts a spell, they take 125 damage"},
             {"name": "Hush", "itemNum": 36, "description": "Basic attacks have 33% chance to preventing the target from gaining mana for 4 seconds"},
             {"name": "Zephyr", "itemNum": 37, "description": "At the beginning of each round, banishes the unit that mirrors the wearer's placement on the board"},
             {"name": "Runaan's_Hurricane", "itemNum": 38, "description": "Basic attacks fire additional missile at another nearby enemy, dealing 75% ad and applies on-hit effects"},
