@@ -37,12 +37,13 @@ app.on('ready',()=>{                    //run when app is ready,
 
     loadHTML()
     
-    globalShortcut.register('Z', function(){
-
-        if(mainWindow.isFocused != true){
-            mainWindow.focus()
-        }   
-    })
+    // globalShortcut.register('alt+ctrl+5', function(){
+    //     console.log("key pressed")
+    //     if(mainWindow.isFocused != true){
+           
+    //         mainWindow.focus()
+    //     }   
+    // })
 
 })
 

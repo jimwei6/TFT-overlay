@@ -190,11 +190,11 @@
 </head>
 
 
-<body id="body" onkeydown="showSheet(event)" onkeyup="hideSheet(event, false)" onresize="hideSheet(event, true)">
-    <p style="color: aliceblue; font-size: 10px;" id ="testMessage"></p>
+<body id="body" onresize="hideSheet('resize', true)">
+    <p class="cBox"  onmouseover="showSheet('Class')" onmouseout="hideSheet('Class', false)">Class</p>
     
-    <p style="color: aliceblue" id ="testMessage2"></p>
-    <p style="color: aliceblue" id ="testMessage3"></p>
+    <p class="cBox" onmouseover="showSheet('Origin')" onmouseout="hideSheet('Origin', false)">Origin</p>
+    <p class="cBox"onmouseover="showSheet('Items')" onmouseout="hideSheet('Items', false)">Items</p>
 
     <script src="items.js"></script>
     <script src="class.js"></script>
@@ -202,6 +202,10 @@
 
 
     <script>
+
+        function testfocus(){
+            document.getElementById("testMessage").innerHTML = "focus changed"
+        }
         // document.getElementById("testMessage").innerHTML = "on working"
         const electron = require('electron')            
         const remote = electron.remote
@@ -232,7 +236,7 @@
 //edit this so work for other windows
     
 
-        function hideSheet(event, bool)
+        function hideSheet(name, bool)
         {
             if(bool == true){ ///end up reopening window each time to prevent visual bugs
                 document.getElementById("Itemizations").style.display = "none"
@@ -246,18 +250,18 @@
             else{
 
                 
-                if(event.key == "s"){
+                if(name == "Items"){
                     document.getElementById("Itemizations").style.display = "none"
                     sDown = false
                 }
-                if(event.key == "Tab")
+                if(name == "Origin")
                 {
                     
                     document.getElementById("Origins").style.display = "none"
                     sDown = false
                    
                 }
-                if(event.key == "c")
+                if(name == "Class")
                 {
                 // document.getElementById("testMessage").innerHTML = "c released";
                     document.getElementById("Classes").style.display = "none"
@@ -270,9 +274,10 @@
             }
         }
         
-        function showSheet(event)
+        function showSheet(name)
         {
-            if(event.key == "s"){
+           
+            if(name == "Items"){
                 document.getElementById("Itemizations").style.display = "block"
                 document.getElementById("Origins").style.display = "none"
                 document.getElementById("Classes").style.display = "none"
@@ -281,7 +286,7 @@
     
             }
             
-            if(event.key == "Tab")
+            if(name == "Origin")
             {
                 
                 document.getElementById("Origins").style.display = "block"
@@ -290,7 +295,7 @@
                 tabDown = true
             }
 
-            if(event.key == "c")
+            if(name == "Class")
             {
                // 
                 document.getElementById("Classes").style.display = "block"

@@ -116,13 +116,9 @@ function displayItemBlock(baseItem){
 
 
 }
-/* <img src="../resources/itemIcons/B._F._Sword.png" style="float:left">
-<svg width="50%" height="2vh">
-    <line x1="0" y1="1vh" x2="50%" y2="1vh" class="lines"></line>
-</svg>
- <img src="../resources/itemIcons/B._F._Sword.png" style="float:right"> */
 
- function connetSubs(){
+
+ function connectSubs(){
     
     var svg = document.createElementNS(svgNS, 'svg')
     svg.setAttribute('width', "4vw")
@@ -140,7 +136,7 @@ function displayItemBlock(baseItem){
     return svg
  }
 
-//decides which item is formed based on number and matrix in items.json
+//decides which item is formed based on number and matrix pos in items.json
 function formItems(baseItem, subBaseItem){
 
     if(subBaseItem.itemNum < baseItem.itemNum)
@@ -165,7 +161,7 @@ function formItems(baseItem, subBaseItem){
     subDiv.setAttribute('class', 'subItem')
 
     subDiv.appendChild(subImage(subBaseItem))
-    subDiv.appendChild(connetSubs())
+    subDiv.appendChild(connectSubs())
     subDiv.appendChild(subMainImage(mainItem))
 
     itemsClone.getElementById(baseItem.name).appendChild(subDiv)

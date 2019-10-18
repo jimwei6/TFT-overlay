@@ -102,7 +102,7 @@ color: white;
   }
 
   .infoBox{
-    background-image: url('../resources/sheetBackgrounds/blackB.jpg');
+    background-color: rgb(58, 38, 38);
     height: 91vh;
     width: 80vw;
     position: absolute;
@@ -229,13 +229,13 @@ color: white;
  }
  .mainItem{
    position: relative;
-   left: 2vw;
+   left: calc(2vw + (50% - 8vw) );
    height: 4vh;
    width: 2vw;
  }
  .subItem{
-    position: relative;
-   left: 4vw; 
+  position: relative;
+   margin:auto;
    height: 4vh;
    width: 8vw;
  }
@@ -255,4 +255,16 @@ color: white;
 .lines{
   stroke:white; 
   stroke-width:3;
+}
+
+.cBox{
+  background-color: black;
+  color: white;
+  font-size: 2vh;
+  width: 4vw;
+  -webkit-user-select: none;
+  height: 2vh;
+  display: flex;
+  text-align: center;
+ 
 }
