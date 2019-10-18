@@ -1,0 +1,270 @@
+ body{
+  
+    background-color: rgba(250, 250, 250, 0.5);
+    padding-top: 10vh;
+    overflow: hidden;
+    -webkit-app-region: no-drag;   
+} 
+html { font-size: calc(0.40em) }
+/* .draggable{
+  height: 40px;
+  width: 40px;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  background-color:rgba(250, 0, 0, 0.2);
+} */
+
+.clickable{
+  background-color: rgba( 117, 117, 30, 0.25);
+  height: 4vh;
+  width: 8vw;
+  -webkit-user-select: none;
+}
+.closeBar{
+  background-color: rgba( 117, 117, 30, 0.25);
+  height: 3vh;
+  width: 3vw;
+  -webkit-user-select: none;
+}
+
+#closeBar{
+  position: fixed;
+  top: 0%;
+  right: 0%;
+}
+
+#x-shutOff{
+font-size: calc(0.2vh + 0.8vw);
+position: absolute;
+top: 0.75vh;
+right: 1.5vw;
+color: white;
+
+}
+
+#dragBar{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.clickable:hover{
+  background-color: rgba( 117, 117, 30, 0.5);
+  
+}
+.closeBar:hover{
+  background-color: rgba( 255, 0, 0, 0.5);
+  
+}
+
+.slidecontainer {
+    width: 80%; /* Width of the outside container */
+    position: inherit;
+    left: 5%;
+    top: 25%;
+  }
+
+  
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 1vh; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 1.5vw; /* Set a specific slider handle width */
+    height: 1.5vh; /* Slider handle height */
+    background: #FFF; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 2vw; /* Set a specific slider handle width */
+    height: 2vw; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .infoBox{
+    background-color: rgb(58, 38, 38);
+    height: 91vh;
+    width: 80vw;
+    position: absolute;
+    top: 4.5vh;
+    left: 10vw;
+  }
+ 
+  .sheetTitle{
+    color: white;
+    position: absolute;
+    bottom: 100%;
+    left: 47%;
+    font-size: 32px;
+  }
+
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  [class*="col-c"] {
+    float: left;
+    padding-bottom: 1vh;
+    text-align: center;
+    min-height: 22.75vh;
+    max-height: 22.75vh;
+    border: 0.25vh solid lightgrey;
+  }
+  [class*="col-i"] {
+    float: left;
+    padding-bottom: 1vh;
+    text-align: center;
+    min-height: 45.5vh;
+    max-height: 45.5vh;
+    border: 0.25vh solid lightgrey;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* .gridContainer{
+
+    display: grid;
+    grid-template-areas: 
+    'demon demon demon glacial glacial glacial noble noble noble'
+    'void void void pirate pirate pirate wild wild wild'
+    'yordle yordle yordle dragon dragon hextech hextech exile robot'
+    'imperial imperial imperial ninja ninja ninja phantom phantom phantom';
+    grid-gap: 5px;
+    background-color:rgba(250, 250, 250, 0.5);
+    padding: 5px;
+  
+  } */
+  
+  /* .Demon{ grid-area: demon;}
+  .Dragon{ grid-area: dragon;}
+  .Exile{ grid-area: exile;}
+  .Glacial{ grid-area: glacial;}
+  .Hextech{ grid-area: hextech;}
+  .Imperial{ grid-area: imperial;}
+  .Ninja{ grid-area: ninja;}
+  .Noble{ grid-area: noble;}
+  .Phantom{ grid-area: phantom;}
+  .Pirate{ grid-area: pirate;}
+  .Robot{ grid-area: robot;}
+  .Void{ grid-area: void;}
+  .Wild{ grid-area: wild;}
+  .Yordle{ grid-area: yordle;} */
+
+  .col-c1 {width: 8.33%;}
+  .col-c2 {width: 16.66%;}
+  .col-c20{width: 20%;}  
+  .col-c3 {width: 25%;}
+  .col-c4 {width: 33.33%;}
+  .col-c5 {width: 41.66%;}
+  .col-c6 {width: 50%;}
+  .col-c7 {width: 58.33%;}
+  .col-c8 {width: 66.66%;}
+  .col-c9 {width: 75%;}
+  .col-c10 {width: 83.33%;}
+  .col-c11 {width: 91.66%;}
+  .col-c12 {width: 100%;}
+  
+
+  .col-i1 {width: 8.33%; }
+  .col-i2 {width: 16.66%;}
+  .col-i20{width: 20%;}  
+  .col-i3 {width: 25%;}
+  .col-i4 {width: 33.33%;}
+  .col-i5 {width: 41.66%;}
+  .col-i6 {width: 50%;}
+  .col-i7 {width: 58.33%;}
+  .col-i8 {width: 66.66%;}
+  .col-i9 {width: 75%;}
+  .col-i10 {width: 83.33%;}
+  .col-i11 {width: 91.66%;}
+  .col-i12 {width: 100%;}
+
+  .champIcon{
+    height: 6vh;
+    width: 3vw;
+    align-content: center;
+    border-style: solid;
+    border-color: #FFF;
+    border-width: 0.5%;
+  }
+  
+  .nameDisplay{
+    color: white;
+    text-align: center;
+    font-size:   calc(0.36vh + 0.64vw);
+  }
+ .itemIcon{
+   /* display: block; */
+   height: 4vh;
+   width: 2vw;
+   align-self: left;
+   border-style: solid;
+   border-color: #FFF;
+   border-width: 0.09vw;
+   -webkit-user-select: none;
+ }
+ .mainItem{
+   position: relative;
+   left: calc(2vw + (50% - 8vw) );
+   height: 4vh;
+   width: 2vw;
+ }
+ .subItem{
+  position: relative;
+   margin:auto;
+   height: 4vh;
+   width: 8vw;
+ }
+ .overlay{
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0vh;
+   left: 0vw;
+ }
+
+ .compDescript{
+   color:white;
+   text-align: center;
+   font-size:  calc(0.70vh + 0.36vw);
+ }
+.lines{
+  stroke:white; 
+  stroke-width:3;
+}
+
+.cBox{
+  background-color: black;
+  color: white;
+  font-size: 2vh;
+  width: 4vw;
+  -webkit-user-select: none;
+  height: 2vh;
+  display: flex;
+  text-align: center;
+ 
+}

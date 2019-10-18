@@ -1,9 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <p style="color: aliceblue">dummy message</p>
+<head id="head">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>window.$ = window.jQuery = require('jquery');</script>
+
+    <template>
+        <div class="infoBox" id="Origins"  style="display: none">
+           
+            <div class="row">
+                <div class="col-c4" id="Demon" >
+                    <h1 class="nameDisplay">Demon</h1>
+                </div>
+                
+                <div class="col-c4" id="Glacial">
+                    <h1 class="nameDisplay">Glacial</h1>
+                </div>
+
+                <div class="col-c4" id="Noble">
+                    <h1 class="nameDisplay">Noble</h1>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-c4" id="Void">
+                    <h1 class="nameDisplay">Void</h1>
+                </div>
+    
+                <div class="col-c4" id="Pirate">
+                    <h1 class="nameDisplay">Pirate</h1>
+                </div>
+    
+                <div class="col-c4" id="Wild">
+                    <h1 class="nameDisplay">Wild</h1>
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="col-c4" id="Yordle">
+                    <h1 class="nameDisplay">Yordle</h1>
+                </div>
+        
+                <div class="col-c3" id="Dragon">
+                    <h1 class="nameDisplay">Dragon</h1>
+                </div>
+        
+                <div class="col-c3" id="Hextech">
+                   <h1 class="nameDisplay">Hextech</h1>
+                </div>
+
+                <div class="col-c2" id="Exile">
+                    <h1 class="nameDisplay">Exile</h1>
+                </div>
+
+                
+            </div>
+            <div class="row">
+                <div class="col-c4" id="Imperial">
+                    <h1 class="nameDisplay">Imperial</h1>
+                </div>
+            
+                <div class="col-c3" id="Ninja">
+                    <h1 class="nameDisplay">Ninja</h1>
+                </div>
+            
+                <div class="col-c3" id="Phantom">
+                    <h1 class="nameDisplay">Phantom</h1>
+                </div>
+
+                <div class="col-c2" id="Robot">
+                    <h1 class="nameDisplay">Robot</h1>
+                </div>
+            
+            </div>
+            
+            <h class="sheetTitle">Origins</h>
+        </div>
+    </template>
+    
+    <template>
+        <div class="infoBox" id="Classes" style="display: none">
+            <div class="row">
+
+                <div class="col-c4" id="Elementalist">
+                    <h1 class="nameDisplay">Elementalist</h1>
+                </div>
+                <div class="col-c4" id="Brawler">
+                    <h1 class="nameDisplay">Brawler</h1>
+                </div>
+                <div class="col-c4" id="Guardian">
+                    <h1 class="nameDisplay">Guardian</h1>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-c4" id="Gunslinger">
+                    <h1 class="nameDisplay">Gunslinger</h1>
+                </div>
+                <div class="col-c4" id="Ranger">
+                    <h1 class="nameDisplay">Ranger</h1>
+                </div>
+                <div class="col-c4" id="Knight">
+                    <h1 class="nameDisplay">Knight</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-c6" id="Shapeshifter">
+                    <h1 class="nameDisplay">Shapeshifter</h1>
+                </div>
+                <div class="col-c6" id="Sorcerer">
+                    <h1 class="nameDisplay">Sorcerer</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-c6" id="Assassin">
+                    <h1 class="nameDisplay">Assassin</h1>
+                </div>
+                <div class="col-c6" id="Blademaster">
+                    <h1 class="nameDisplay">Blademaster</h1>
+                </div>
+
+            </div>
+            <h class="sheetTitle">Class</h>
+
+        </div>
+    </template>
+ 
+    <template> 
+        <div class="infoBox" id="Itemizations" style="display: none">
+
+            <div class="row">
+                <div class="col-i20" id="B._F._Sword">     
+              
+                </div>
+                <div class="col-i20" id="Recurve_Bow">
+                    </div>
+                <div class="col-i20"  id="Chain_Vest">
+                    
+                    </div>
+                <div class="col-i20" id="Negatron_Cloak">
+                
+                    </div>
+                <div class="col-i20"  id="Needlessly_Large_Rod">
+                
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-i3"  id="Tear_of_the_Goddess">
+                   
+                    </div>
+                <div class="col-i3" id="Giant's_Belt">
+                    
+                    </div>
+                <div class="col-i3" id="Spatula">
+                   
+                </div>
+                <div class="col-i3"  id="Sparring_Gloves">
+                    
+                </div>
+                
+            </div>
+           
+
+        </div>
+    </template> 
+
+
+
+    <div>
+        <div onmouseover="clickE()" onmouseout="clickD()" onclick="closeWindow()" class="closeBar"  id="closeBar" style="float: right">
+            
+             <h id="x-shutOff">X</h>
+            
+            
+        </div>
+        <div onmouseover="clickE()" onmouseout="clickD()" class="clickable" id="dragBar" style="float: left">
+                <div class="slidecontainer" >
+                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+                </div>
+        </div>   
+    </div>
 </head>
-<body>
+
+
+<body id="body" onresize="hideSheet('resize', true)">
+    <p class="cBox"  onmouseover="showSheet('Class')" onmouseout="hideSheet('Class', false)">Class</p>
+    
+    <p class="cBox" onmouseover="showSheet('Origin')" onmouseout="hideSheet('Origin', false)">Origin</p>
+    <p class="cBox"onmouseover="showSheet('Items')" onmouseout="hideSheet('Items', false)">Items</p>
+
+    <script src="items.js"></script>
+    <script src="class.js"></script>
+
+
+
+    <script>
+
+        function testfocus(){
+            document.getElementById("testMessage").innerHTML = "focus changed"
+        }
+        // document.getElementById("testMessage").innerHTML = "on working"
+        const electron = require('electron')            
+        const remote = electron.remote
+        var mouseEnable = false;
+
+        var scrollbar = document.getElementById("myRange")
+        var tabDown = false
+        var cDown = false
+        var sDown = false
+
+        scrollbar.oninput = function() {
+            var value = parseFloat(this.value/100, 10)
+            document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")"
+            document.getElementById("head").style.opacity = value;
+        }
+        
+        function clickE(){
+            remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
+        }
+        function clickD(){
+            remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
+        }
+
+        function closeWindow(){
+            remote.getCurrentWindow().close()
+        }
+
+//edit this so work for other windows
+    
+
+        function hideSheet(name, bool)
+        {
+            if(bool == true){ ///end up reopening window each time to prevent visual bugs
+                document.getElementById("Itemizations").style.display = "none"
+                sDown = false
+                document.getElementById("Origins").style.display = "none"
+                sDown = false
+                document.getElementById("Classes").style.display = "none"
+                sDown = false
+                clickD()
+            }
+            else{
+
+                
+                if(name == "Items"){
+                    document.getElementById("Itemizations").style.display = "none"
+                    sDown = false
+                }
+                if(name == "Origin")
+                {
+                    
+                    document.getElementById("Origins").style.display = "none"
+                    sDown = false
+                   
+                }
+                if(name == "Class")
+                {
+                // document.getElementById("testMessage").innerHTML = "c released";
+                    document.getElementById("Classes").style.display = "none"
+                    sDown = false
+                }
+                if(!(tabDown && cDown && sDown)){
+                    clickD()
+                }
+                
+            }
+        }
+        
+        function showSheet(name)
+        {
+           
+            if(name == "Items"){
+                document.getElementById("Itemizations").style.display = "block"
+                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Classes").style.display = "none"
+                sDown = true
+
+    
+            }
+            
+            if(name == "Origin")
+            {
+                
+                document.getElementById("Origins").style.display = "block"
+                document.getElementById("Classes").style.display = "none"
+                document.getElementById("Itemizations").style.display = "none"
+                tabDown = true
+            }
+
+            if(name == "Class")
+            {
+               // 
+                document.getElementById("Classes").style.display = "block"
+                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Itemizations").style.display = "none"
+                cDown = true
+            }
+            clickE()
+        }
+
+    </script>
+
+   
+        
     
 </body>
-</html>
+</html> 
+
+            
+<!-- document.getElementById("testMessage").innerHTML = "this is working!"
+
+var firstIcon = $('.itemIcon').eq(1).offset()
+
+    
+
+document.getElementById("testMessage").innerHTML = firstIcon.left -->

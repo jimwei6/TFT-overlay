@@ -1,6 +1,8 @@
 const electron = require('electron')
 const url = require('url')
 const path = require('path')
+const globalShortcut = electron.globalShortcut
+
 
 const {app, BrowserWindow} = electron
 
@@ -10,15 +12,16 @@ function windowInit() {                 //set up the window and its defaults
     mainWindow = new BrowserWindow({
         transparent: true,
         frame: false,
-        width: 'screenX',
-        height: 'screenY',
         title: "LoL tft Overlay",
-        backgroundColor: '#111111',
         titleBarStyle: "hiddenInset",
         webPreferences: {nodeIntegration: true}, 
         alwaysOnTop: true,
+        minHeight:720,
+        minWidth: 1280
     })
-}
+    mainWindow.maximize()
+//     mainWindow.setIgnoreMouseEvents(true, {forward: true});
+ }
 
 function loadHTML(){                    //load index.html into the browser window
     mainWindow.loadURL(url.format({
@@ -33,6 +36,18 @@ app.on('ready',()=>{                    //run when app is ready,
     windowInit()
 
     loadHTML()
+    
+    // globalShortcut.register('alt+ctrl+5', function(){
+    //     console.log("key pressed")
+    //     if(mainWindow.isFocused != true){
+           
+    //         mainWindow.focus()
+    //     }   
+    // })
 
 })
+
+
+
+
 
