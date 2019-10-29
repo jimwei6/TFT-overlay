@@ -5,70 +5,66 @@
     <script>window.$ = window.jQuery = require('jquery');</script>
 
     <template>
-        <div class="infoBox" id="Origins"  style="display: none">
+        <div class="infoBox" id="Elements"  style="display: none">
            
             <div class="row">
-                <div class="col-c4" id="Demon" >
+                <div class="col-c4" id="Crystal" >
                     <h1 class="nameDisplay">Demon</h1>
                 </div>
                 
-                <div class="col-c4" id="Glacial">
+                <div class="col-c4" id="Desert">
                     <h1 class="nameDisplay">Glacial</h1>
                 </div>
 
-                <div class="col-c4" id="Noble">
+                <div class="col-c4" id="Electric">
                     <h1 class="nameDisplay">Noble</h1>
                 </div>
 
             </div>
             <div class="row">
-                <div class="col-c4" id="Void">
+                <div class="col-c4" id="Glacial">
                     <h1 class="nameDisplay">Void</h1>
                 </div>
     
-                <div class="col-c4" id="Pirate">
+                <div class="col-c4" id="Inferno">
                     <h1 class="nameDisplay">Pirate</h1>
                 </div>
     
-                <div class="col-c4" id="Wild">
+                <div class="col-c4" id="Light">
                     <h1 class="nameDisplay">Wild</h1>
                 </div>
     
             </div>
             <div class="row">
-                <div class="col-c4" id="Yordle">
+                <div class="col-c4" id="Steel">
                     <h1 class="nameDisplay">Yordle</h1>
                 </div>
         
-                <div class="col-c3" id="Dragon">
+                <div class="col-c3" id="Mountain">
                     <h1 class="nameDisplay">Dragon</h1>
                 </div>
         
-                <div class="col-c3" id="Hextech">
+                <div class="col-c3" id="Ocean">
                    <h1 class="nameDisplay">Hextech</h1>
                 </div>
 
-                <div class="col-c2" id="Exile">
+                <div class="col-c2" id="Poison">
                     <h1 class="nameDisplay">Exile</h1>
                 </div>
 
                 
             </div>
             <div class="row">
-                <div class="col-c4" id="Imperial">
+                <div class="col-c4" id="Shadow">
                     <h1 class="nameDisplay">Imperial</h1>
                 </div>
             
-                <div class="col-c3" id="Ninja">
+                <div class="col-c4" id="Wind">
                     <h1 class="nameDisplay">Ninja</h1>
                 </div>
             
-                <div class="col-c3" id="Phantom">
+                <div class="col-c4" id="Woodland">
                     <h1 class="nameDisplay">Phantom</h1>
-                </div>
-
-                <div class="col-c2" id="Robot">
-                    <h1 class="nameDisplay">Robot</h1>
                 </div>
             
             </div>
@@ -81,26 +77,26 @@
         <div class="infoBox" id="Classes" style="display: none">
             <div class="row">
 
-                <div class="col-c4" id="Elementalist">
+                <div class="col-c4" id="Alchemist">
                     <h1 class="nameDisplay">Elementalist</h1>
                 </div>
-                <div class="col-c4" id="Brawler">
+                <div class="col-c4" id="Assassin">
                     <h1 class="nameDisplay">Brawler</h1>
                 </div>
-                <div class="col-c4" id="Guardian">
+                <div class="col-c4" id="Avatar">
                     <h1 class="nameDisplay">Guardian</h1>
                 </div>
             </div>
 
             <div class="row">
 
-                <div class="col-c4" id="Gunslinger">
+                <div class="col-c4" id="Berserker">
                     <h1 class="nameDisplay">Gunslinger</h1>
                 </div>
-                <div class="col-c4" id="Ranger">
+                <div class="col-c4" id="Blademaster">
                     <h1 class="nameDisplay">Ranger</h1>
                 </div>
-                <div class="col-c4" id="Knight">
+                <div class="col-c4" id="Summoner">
                     <h1 class="nameDisplay">Knight</h1>
                 </div>
 
@@ -108,22 +104,29 @@
 
             <div class="row">
 
-                <div class="col-c6" id="Shapeshifter">
+                <div class="col-c4" id="Druid">
                     <h1 class="nameDisplay">Shapeshifter</h1>
                 </div>
-                <div class="col-c6" id="Sorcerer">
+                <div class="col-c4" id="Mage">
                     <h1 class="nameDisplay">Sorcerer</h1>
+                </div>
+                <div class="col-c4" id="Mystic">
+                    <h1 class="nameDisplay">Assassin</h1>
                 </div>
 
             </div>
 
             <div class="row">
 
-                <div class="col-c6" id="Assassin">
+              
+                <div class="col-c4" id="Predator">
+                    <h1 class="nameDisplay">Blademaster</h1>
+                </div>
+                <div class="col-c4" id="Ranger">
                     <h1 class="nameDisplay">Assassin</h1>
                 </div>
-                <div class="col-c6" id="Blademaster">
-                    <h1 class="nameDisplay">Blademaster</h1>
+                <div class="col-c4" id="Warden">
+                    <h1 class="nameDisplay">Assassin</h1>
                 </div>
 
             </div>
@@ -193,9 +196,10 @@
 <body id="body" onresize="hideSheet('resize', true)">
     <p class="cBox"  onmouseover="showSheet('Class')" onmouseout="hideSheet('Class', false)">Class</p>
     
-    <p class="cBox" onmouseover="showSheet('Origin')" onmouseout="hideSheet('Origin', false)">Origin</p>
+    <p class="cBox" onmouseover="showSheet('Elements')" onmouseout="hideSheet('Elements', false)">Origin</p>
     <p class="cBox"onmouseover="showSheet('Items')" onmouseout="hideSheet('Items', false)">Items</p>
 
+   
     <script src="items.js"></script>
     <script src="class.js"></script>
 
@@ -203,10 +207,8 @@
 
     <script>
 
-        function testfocus(){
-            document.getElementById("testMessage").innerHTML = "focus changed"
-        }
-        // document.getElementById("testMessage").innerHTML = "on working"
+   
+     
         const electron = require('electron')            
         const remote = electron.remote
         var mouseEnable = false;
@@ -241,7 +243,7 @@
             if(bool == true){ ///end up reopening window each time to prevent visual bugs
                 document.getElementById("Itemizations").style.display = "none"
                 sDown = false
-                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Elements").style.display = "none"
                 sDown = false
                 document.getElementById("Classes").style.display = "none"
                 sDown = false
@@ -254,16 +256,16 @@
                     document.getElementById("Itemizations").style.display = "none"
                     sDown = false
                 }
-                if(name == "Origin")
+                if(name == "Elements")
                 {
                     
-                    document.getElementById("Origins").style.display = "none"
+                    document.getElementById("Elements").style.display = "none"
                     sDown = false
                    
                 }
                 if(name == "Class")
                 {
-                // document.getElementById("testMessage").innerHTML = "c released";
+              
                     document.getElementById("Classes").style.display = "none"
                     sDown = false
                 }
@@ -279,17 +281,17 @@
            
             if(name == "Items"){
                 document.getElementById("Itemizations").style.display = "block"
-                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Elements").style.display = "none"
                 document.getElementById("Classes").style.display = "none"
                 sDown = true
 
     
             }
             
-            if(name == "Origin")
+            if(name == "Elements")
             {
-                
-                document.getElementById("Origins").style.display = "block"
+               
+                document.getElementById("Elements").style.display = "block"
                 document.getElementById("Classes").style.display = "none"
                 document.getElementById("Itemizations").style.display = "none"
                 tabDown = true
@@ -299,7 +301,7 @@
             {
                // 
                 document.getElementById("Classes").style.display = "block"
-                document.getElementById("Origins").style.display = "none"
+                document.getElementById("Elements").style.display = "none"
                 document.getElementById("Itemizations").style.display = "none"
                 cDown = true
             }
@@ -315,10 +317,3 @@
 </html> 
 
             
-<!-- document.getElementById("testMessage").innerHTML = "this is working!"
-
-var firstIcon = $('.itemIcon').eq(1).offset()
-
-    
-
-document.getElementById("testMessage").innerHTML = firstIcon.left -->

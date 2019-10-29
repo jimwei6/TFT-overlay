@@ -1,24 +1,26 @@
 
-var classTemp, classClone, OriginsTemp, OriginsClone
+var classTemp, classClone, ElementsTemp, ElementsClone
 
 var championPath = __dirname.replace("public", "resources/champIcons")
 
-const comps = require('../data/comps.json') //json file where info is stored
 
-const champOrigins = comps[0].origins // shows all {} origins
-const  champClass = comps[1].class  // shows all {} classes
+const ROECOMPS = require('../data/roe-comps.json')//json file where info is stored
+
+const champElements = ROECOMPS[0].elements // shows all {} origins
+
+const champClass = ROECOMPS[1].class  // shows all {} classes
 
 
 
 classTemp = document.getElementsByTagName("template")[1] //template of class
 classClone = document.importNode(classTemp.content, true) //cloning template
 
-OriginsTemp = document.getElementsByTagName("template")[0] //template of origins
-OriginsClone = document.importNode(OriginsTemp.content, true) //cloning template
+ElementsTemp = document.getElementsByTagName("template")[0] //template of elements
+ElementsClone = document.importNode(ElementsTemp.content, true) //cloning template
 
 displayComps(champClass, classClone);
 
-displayComps(champOrigins, OriginsClone);
+displayComps(champElements, ElementsClone);
 
 //pass in list of origins and display on html
 function displayComps(compList, template){
@@ -27,13 +29,15 @@ function displayComps(compList, template){
         
         addImages(comp, comp.champions, template)
         
+        
         addDescript(comp, template)
-
+       
         addTiers(comp, template)
         
     })
     
     document.body.appendChild(template)
+
     
 }
 
@@ -41,7 +45,7 @@ function displayComps(compList, template){
 // adds all champion icons for a single origin  assume originChamps list wont be empty
 // takes in whole origin {} and origin.champions
 function addImages(comp, compChamps, template){
-
+    
     var img = document.createElement('img')
     img.setAttribute('class', 'champIcon')
     img.src = championPath + "/" + compChamps[0] +".png"
@@ -79,6 +83,7 @@ function addTiers(comp, template){
     tier.innerHTML = tierStr
     tier.style.color="white"
     template.getElementById(comp.name).appendChild(tier)
+   
 }
 
 
