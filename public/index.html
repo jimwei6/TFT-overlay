@@ -9,62 +9,62 @@
            
             <div class="row">
                 <div class="col-c4" id="Crystal" >
-                    <h1 class="nameDisplay">Demon</h1>
+                    
                 </div>
                 
                 <div class="col-c4" id="Desert">
-                    <h1 class="nameDisplay">Glacial</h1>
+                    
                 </div>
 
                 <div class="col-c4" id="Electric">
-                    <h1 class="nameDisplay">Noble</h1>
+                    
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-c4" id="Glacial">
-                    <h1 class="nameDisplay">Void</h1>
+                   
                 </div>
     
                 <div class="col-c4" id="Inferno">
-                    <h1 class="nameDisplay">Pirate</h1>
+                    
                 </div>
     
                 <div class="col-c4" id="Light">
-                    <h1 class="nameDisplay">Wild</h1>
+                    
                 </div>
     
             </div>
             <div class="row">
                 <div class="col-c4" id="Steel">
-                    <h1 class="nameDisplay">Yordle</h1>
+                    
                 </div>
         
                 <div class="col-c3" id="Mountain">
-                    <h1 class="nameDisplay">Dragon</h1>
+                    
                 </div>
         
                 <div class="col-c3" id="Ocean">
-                   <h1 class="nameDisplay">Hextech</h1>
+                   
                 </div>
 
                 <div class="col-c2" id="Poison">
-                    <h1 class="nameDisplay">Exile</h1>
+                    
                 </div>
 
                 
             </div>
             <div class="row">
                 <div class="col-c4" id="Shadow">
-                    <h1 class="nameDisplay">Imperial</h1>
+                    
                 </div>
             
                 <div class="col-c4" id="Wind">
-                    <h1 class="nameDisplay">Ninja</h1>
+                    
                 </div>
             
                 <div class="col-c4" id="Woodland">
-                    <h1 class="nameDisplay">Phantom</h1>
+                   
                 </div>
             
             </div>
@@ -78,26 +78,26 @@
             <div class="row">
 
                 <div class="col-c4" id="Alchemist">
-                    <h1 class="nameDisplay">Elementalist</h1>
+                    
                 </div>
                 <div class="col-c4" id="Assassin">
-                    <h1 class="nameDisplay">Brawler</h1>
+                    
                 </div>
                 <div class="col-c4" id="Avatar">
-                    <h1 class="nameDisplay">Guardian</h1>
+                   
                 </div>
             </div>
 
             <div class="row">
 
                 <div class="col-c4" id="Berserker">
-                    <h1 class="nameDisplay">Gunslinger</h1>
+                    
                 </div>
                 <div class="col-c4" id="Blademaster">
-                    <h1 class="nameDisplay">Ranger</h1>
+                    
                 </div>
                 <div class="col-c4" id="Summoner">
-                    <h1 class="nameDisplay">Knight</h1>
+                    
                 </div>
 
             </div>
@@ -105,13 +105,13 @@
             <div class="row">
 
                 <div class="col-c4" id="Druid">
-                    <h1 class="nameDisplay">Shapeshifter</h1>
+                    
                 </div>
                 <div class="col-c4" id="Mage">
-                    <h1 class="nameDisplay">Sorcerer</h1>
+                    
                 </div>
                 <div class="col-c4" id="Mystic">
-                    <h1 class="nameDisplay">Assassin</h1>
+                  
                 </div>
 
             </div>
@@ -120,13 +120,13 @@
 
               
                 <div class="col-c4" id="Predator">
-                    <h1 class="nameDisplay">Blademaster</h1>
+                    
                 </div>
                 <div class="col-c4" id="Ranger">
-                    <h1 class="nameDisplay">Assassin</h1>
+                   
                 </div>
                 <div class="col-c4" id="Warden">
-                    <h1 class="nameDisplay">Assassin</h1>
+                   
                 </div>
 
             </div>
@@ -189,17 +189,28 @@
                         <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
                 </div>
         </div>   
+
     </div>
+    
 </head>
 
 
 <body id="body" onresize="hideSheet('resize', true)">
+
     <p class="cBox"  onmouseover="showSheet('Class')" onmouseout="hideSheet('Class', false)">Class</p>
     
     <p class="cBox" onmouseover="showSheet('Elements')" onmouseout="hideSheet('Elements', false)">Origin</p>
     <p class="cBox"onmouseover="showSheet('Items')" onmouseout="hideSheet('Items', false)">Items</p>
 
-   
+    <img src="../resources/otherIcons/4wayArrow.png" id="menuBar">
+
+    <p id="testmessage"></p>
+
+    <div id="transBar" onmouseover="clickE()" onmouseout="clickD()">   
+        <input id="transButton" type="checkbox" name="window_state" value="transparent" onclick="changeTransparency(this)">
+        <h1 id="transButtontxt">Click Through</h1>
+    </div>
+
     <script src="items.js"></script>
     <script src="class.js"></script>
 
@@ -218,6 +229,19 @@
         var cDown = false
         var sDown = false
 
+        var windowTransparent = false
+
+        function changeTransparency(checkbox){
+            if(checkbox.checked){
+                windowTransparent = true
+                document.getElementById("menuBar").style.display = "none"
+            }
+            else{
+                windowTransparent = false
+                document.getElementById("menuBar").style.display = "block"
+            }
+        }
+
         scrollbar.oninput = function() {
             var value = parseFloat(this.value/100, 10)
             document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")"
@@ -225,10 +249,14 @@
         }
         
         function clickE(){
+        
             remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
         }
         function clickD(){
+            if(windowTransparent == true)
+            {
             remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
+            }
         }
 
         function closeWindow(){

@@ -27,6 +27,8 @@ function displayComps(compList, template){
     
     compList.forEach(function(comp){
         
+        addHeader(comp, template)
+        
         addImages(comp, comp.champions, template)
         
         
@@ -41,7 +43,12 @@ function displayComps(compList, template){
     
 }
 
-
+function addHeader(comp, template){
+    var header = document.createElement('h1')
+    header.setAttribute('class', 'nameDisplay')
+    header.innerHTML = comp.name
+    template.getElementById(comp.name).appendChild(header)
+}
 // adds all champion icons for a single origin  assume originChamps list wont be empty
 // takes in whole origin {} and origin.champions
 function addImages(comp, compChamps, template){

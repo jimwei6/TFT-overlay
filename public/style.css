@@ -210,12 +210,13 @@ color: white;
     border-style: solid;
     border-color: #FFF;
     border-width: 0.5%;
+    margin-top: 2%;
   }
   
   .nameDisplay{
     color: white;
     text-align: center;
-    font-size:   calc(0.36vh + 0.64vw);
+    font-size:   calc(0.30vh + 0.70vw);
   }
  .itemIcon{
    /* display: block; */
@@ -267,4 +268,42 @@ color: white;
   display: flex;
   text-align: center;
  
+}
+
+#menuBar{
+  
+  position: absolute;
+  top: 5vh;
+  left: 0vw;
+  height: 2vh;
+  width: 2vh;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+
+}
+
+#transBar{
+  background-color: black;
+  position: absolute;
+  top: 95vh;
+  left: 0.5vw;
+  height:2.5vh;
+  width: 6.5vw;
+
+}
+
+#transButton{
+  position: inherit;
+  height: 2vh;
+  width: 1vw;
+
+}
+
+#transButtontxt{
+  position: inherit;
+  font-size: calc(0.55vh + 0.45vw); 
+  left:1.25vw;
+  top: -0.5vh;
+  color:white;
+  -webkit-user-select: none;
 }
