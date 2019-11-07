@@ -151,39 +151,10 @@ function displayTitle(baseItem){
 }
 
 
-// <!-- <script>
 
-//         document.getElementById("testMessage").innerHTML = "test started"
-//         var icon = $(".itemIcon")
-//         var LINE = require('./lines.js')
-              
-//         function manageLines(){
-
-            
-            
-            
-//             var div1 = $('#firstDiv');
-//             var div2 = $('#lastDiv');
-
-//             var div3 = $('#firstDiv2');
-//             var div4 = $('#lastDiv2');
-
-//             var line1r = new LINE.itemLines(div1.offset().left, div1.offset().top, div1.offset().left, div2.offset().top, $('#line1'))
-//             var line2r =new LINE.itemLines(div3.offset().left, div3.offset().top, div3.offset().left, div4.offset().top, $('#line2'))
-
-//             var loil = [line1r, line2r, "empty"]
-
-//             LINE.renderLines(loil);
-            
            
            
 
     
 
-
-//         }
-//     //    manageLines()
-
-
-//     </script> -->
     

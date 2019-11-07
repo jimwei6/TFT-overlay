@@ -11,6 +11,10 @@ const champElements = ROECOMPS[0].elements // shows all {} origins
 const champClass = ROECOMPS[1].class  // shows all {} classes
 
 
+const champInfo = require('../data/champs.json')//json file where champion infor are stored
+
+const champRanks = champInfo.champions// list of champions
+
 
 classTemp = document.getElementsByTagName("template")[1] //template of class
 classClone = document.importNode(classTemp.content, true) //cloning template
@@ -18,18 +22,20 @@ classClone = document.importNode(classTemp.content, true) //cloning template
 ElementsTemp = document.getElementsByTagName("template")[0] //template of elements
 ElementsClone = document.importNode(ElementsTemp.content, true) //cloning template
 
-displayComps(champClass, classClone);
+displayComps(champClass, classClone, champRanks);
 
-displayComps(champElements, ElementsClone);
+displayComps(champElements, ElementsClone, champRanks);
+
+//document.getElementById("testmessage").innerHTML = champCost(champRanks, "LeBlanc")
 
 //pass in list of origins and display on html
-function displayComps(compList, template){
+function displayComps(compList, template, champRanks){
     
     compList.forEach(function(comp){
         
         addHeader(comp, template)
         
-        addImages(comp, comp.champions, template)
+        addImages(comp, comp.champions, template, champRanks)
         
         
         addDescript(comp, template)
@@ -51,20 +57,24 @@ function addHeader(comp, template){
 }
 // adds all champion icons for a single origin  assume originChamps list wont be empty
 // takes in whole origin {} and origin.champions
-function addImages(comp, compChamps, template){
+function addImages(comp, compChamps, template, champRanks){
     
     var img = document.createElement('img')
     img.setAttribute('class', 'champIcon')
+   
+    img.style.borderColor = champColor(champCost(champRanks, compChamps[0]))
+
     img.src = championPath + "/" + compChamps[0] +".png"
     template.getElementById(comp.name).appendChild(img)
-    
+      
     if(compChamps.length == 1){
         return;
+        
     }
     else{
-        
-        addImages(comp, compChamps.slice(1), template)
-       
+    
+        addImages(comp, compChamps.slice(1), template, champRanks)
+            
     } 
 
 }
@@ -93,4 +103,69 @@ function addTiers(comp, template){
    
 }
 
+
+//given a champ name, find champ cost
+function champCost(champRanks, champName){
+   
+    var max = champRanks.length
+    var min = 0
+    var start = avg(max, min)
+    
+
+   while(true){
+    
+        var found = champRanks[start]
+        if(found.name == champName){
+            return found.cost
+        }
+        else{
+            if(found.name < champName){
+                min = start
+                start = avg(start, max)
+            }
+            else if(found.name > champName){
+                max = start
+                start = avg(start, min)                
+            }
+        }
+    }
+
+}
+
+function avg(beg, end){
+
+    if(beg+1 ==end || beg-1 == end){
+        return end
+    }
+    else{
+        temp = beg + end
+         
+        if(temp % 2 == 0){
+            return temp / 2
+        }
+        else{
+            return (temp/2 + 0.5)
+        }
+
+    }
+}
+
+function champColor(cost){
+    switch(cost){
+        case 1:
+            return "Gray"
+        case 2:
+            return "Green"
+        case 3:
+            return "Blue"
+        case 4:
+            return "Purple"
+        case 5:
+            return "Yellow"
+        case 7:
+            return "Red"
+        default:
+            return "Black"
+    }
+}
 
