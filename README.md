@@ -10,6 +10,6 @@ Things trying to improve
 - accessibility
 - more information
 
-[pre 9.22](https://github.com/jimwei0620/TFT-overlay/releases/latest)
+[pre 9.22](https://github.com/jimwei0620/TFT-overlay/releases/tag/1)
 
 9.22 coming soon! Rise Of The Elements!!!
