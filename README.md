@@ -12,4 +12,4 @@ Things trying to improve
 
 [pre 9.22](https://github.com/jimwei0620/TFT-overlay/releases/tag/1)
 
-9.22 coming soon! Rise Of The Elements!!!
+[9.22 R.O.E (windows)](https://github.com/jimwei0620/TFT-overlay/releases/tag/9.22)
