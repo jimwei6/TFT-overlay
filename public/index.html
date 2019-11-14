@@ -48,7 +48,7 @@
                    
                 </div>
 
-                <div class="col-c3" id="Poison">
+        <div class="col-c3" id="Poison">
                     
                 </div>
 
@@ -191,26 +191,28 @@
         </div>   
 
     </div>
-    
-</head>
-
-
-<body id="body" onresize="hideSheet('resize', true)">
-
-    <p class="cBox"  onmouseover="showSheet('Class')" onmouseout="hideSheet('Class', false)">Class</p>
-    
-    <p class="cBox" onmouseover="showSheet('Elements')" onmouseout="hideSheet('Elements', false)">Origin</p>
-    <p class="cBox"onmouseover="showSheet('Items')" onmouseout="hideSheet('Items', false)">Items</p>
-
-    <img src="../resources/otherIcons/4wayArrow.png" id="menuBar">
-
-    <p id="testmessage" style="font-size: 20vh;"></p>
 
     <div id="transBar" onmouseover="clickE()" onmouseout="clickD()">   
         <input id="transButton" type="checkbox" name="window_state" value="transparent" onclick="changeTransparency(this)">
         <h1 id="transButtontxt">Click Through</h1>
     </div>
 
+    
+</head>
+
+
+<body id="body" onresize="hideSheet('resize', true)" onmousedown="hideSheet('all', false)">
+
+    <p class="cBox"  onmouseover="showSheet('Class')" >Class</p>
+    
+    <p class="cBox" onmouseover="showSheet('Elements')" >Origin</p>
+    <p class="cBox"onmouseover="showSheet('Items')" >Items</p>
+
+    <img src="../resources/otherIcons/4wayArrow.png" id="menuBar">
+
+    <p id="testmessage" style="font-size: 20vh;"></p>
+
+    
     <script src="items.js"></script>
     <script src="class.js"></script>
 
@@ -218,29 +220,22 @@
 
     <script>
 
+    
    
-     
+        
         const electron = require('electron')            
         const remote = electron.remote
+        const globalShortcut = electron.globalShortcut
+        var wind = remote.getCurrentWindow()
         var mouseEnable = false;
 
         var scrollbar = document.getElementById("myRange")
-        var tabDown = false
-        var cDown = false
-        var sDown = false
-
+      
+        var keepItems = false
         var windowTransparent = false
 
-        function changeTransparency(checkbox){
-            if(checkbox.checked){
-                windowTransparent = true
-                document.getElementById("menuBar").style.display = "none"
-            }
-            else{
-                windowTransparent = false
-                document.getElementById("menuBar").style.display = "block"
-            }
-        }
+        var tabsOpen = false
+      
 
         scrollbar.oninput = function() {
             var value = parseFloat(this.value/100, 10)
@@ -264,55 +259,60 @@
         }
 
 //edit this so work for other windows
-    
-
-        function hideSheet(name, bool)
-        {
-            if(bool == true){ ///end up reopening window each time to prevent visual bugs
-                document.getElementById("Itemizations").style.display = "none"
-                sDown = false
-                document.getElementById("Elements").style.display = "none"
-                sDown = false
-                document.getElementById("Classes").style.display = "none"
-                sDown = false
+        
+        function changeTransparency(checkbox){
+            if(checkbox.checked){
+                windowTransparent = true
+                document.getElementById("menuBar").style.display = "none"
                 clickD()
             }
             else{
-
-                
-                if(name == "Items"){
-                    document.getElementById("Itemizations").style.display = "none"
-                    sDown = false
-                }
-                if(name == "Elements")
-                {
-                    
-                    document.getElementById("Elements").style.display = "none"
-                    sDown = false
-                   
-                }
-                if(name == "Class")
-                {
-              
-                    document.getElementById("Classes").style.display = "none"
-                    sDown = false
-                }
-                if(!(tabDown && cDown && sDown)){
-                    clickD()
-                }
-                
+                windowTransparent = false
+                document.getElementById("menuBar").style.display = "block"
+                clickE()
             }
         }
+
+        function hideSheet(name, bool)
+        {
+            
+            if(tabsOpen == true){
+
+                if(bool == true){ ///end up reopening window each time to prevent visual bugs
+
+                    document.getElementById("Itemizations").style.display = "none"                
+                    document.getElementById("Elements").style.display = "none"  
+                    document.getElementById("Classes").style.display = "none"
+                    clickD()
+
+                }
+                else{
+
+                    
+                
+                        document.getElementById("Itemizations").style.display = "none"  
+                        document.getElementById("Elements").style.display = "none"
+                        document.getElementById("Classes").style.display = "none"
+                        tabsOpen = false
+                        clickD()
+            
+                    
+                }
+            }
         
+        }
+     
         function showSheet(name)
         {
            
             if(name == "Items"){
+               
+    
                 document.getElementById("Itemizations").style.display = "block"
                 document.getElementById("Elements").style.display = "none"
                 document.getElementById("Classes").style.display = "none"
-                sDown = true
-
+     
+              
     
             }
             
@@ -322,22 +322,24 @@
                 document.getElementById("Elements").style.display = "block"
                 document.getElementById("Classes").style.display = "none"
                 document.getElementById("Itemizations").style.display = "none"
-                tabDown = true
+               
             }
 
             if(name == "Class")
             {
-               // 
+               
                 document.getElementById("Classes").style.display = "block"
                 document.getElementById("Elements").style.display = "none"
                 document.getElementById("Itemizations").style.display = "none"
-                cDown = true
+               
             }
+            tabsOpen = true
             clickE()
+
         }
 
     </script>
-
+   
    
         
     

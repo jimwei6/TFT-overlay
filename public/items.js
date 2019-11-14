@@ -111,6 +111,13 @@ function formItems(baseItem, subBaseItem){
     subImg.setAttribute('class', 'itemIcon')
     subImg.src = itemsPath  + "/" + SubBaseItem.name +".png"
     subImg.style.cssFloat = "left"
+    
+    subImg.onmouseover = function(){
+        createDescript(this, SubBaseItem.description)
+    }
+    subImg.onmouseout = function(){
+        destroyDescript(this)
+    }
 
     return subImg
  }
@@ -122,6 +129,13 @@ function formItems(baseItem, subBaseItem){
     mainImg.setAttribute('class', 'itemIcon')
     mainImg.style.cssFloat ="right"
     mainImg.src = itemsPath + "/" + mainItem.name + ".png"
+    
+    mainImg.onmouseover = function(){
+        createCmpDescript(this, mainItem.description)
+    }
+    mainImg.onmouseout = function(){
+        destroyDescript(this)
+    }
     return mainImg
  }
 
@@ -134,6 +148,13 @@ function displayBaseItem(baseItem){
     var img = document.createElement('img')
     img.setAttribute('class', 'itemIcon')
     img.src = itemsPath + "/" + baseItem.name + ".png"
+
+    img.onmouseover = function(){
+        createDescript(this, baseItem.description)
+    }
+    img.onmouseout = function(){
+        destroyDescript(this)
+    }
     
     div.appendChild(img)
     
@@ -144,14 +165,43 @@ function displayBaseItem(baseItem){
 function displayTitle(baseItem){
 
     var title = document.createElement('h1')
-    title.innerHTML = baseItem.name
+    title.innerHTML = baseItem.name 
     title.setAttribute("class", "nameDisplay")
     itemsClone.getElementById(baseItem.name).appendChild(title)
 
 }
 
+function createDescript(dis, desc){
+    var parentElement = dis.parentElement
+    var prgh = document.createElement('span')
+    prgh.setAttribute('class', "itemDescript")
+    prgh.innerHTML = desc
 
+    prgh.style.top = dis.style.top
+    prgh.style.left = dis.style.left + "2.5vw"
 
+  
+    parentElement.prepend(prgh)
+}
+
+function createCmpDescript(dis, desc){
+    var parentElement = dis.parentElement
+    var prgh = document.createElement('span')
+    prgh.setAttribute('class', "itemDescript")
+    prgh.innerHTML = desc
+
+    prgh.style.top = dis.style.top
+    prgh.style.left = dis.style.left + "8.5vw"
+
+  
+    parentElement.prepend(prgh)
+}
+
+function destroyDescript(dis){
+    
+    dis.parentElement.removeChild(dis.parentElement.firstChild)
+
+}
            
            
 

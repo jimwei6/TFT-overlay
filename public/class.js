@@ -61,6 +61,7 @@ function addImages(comp, compChamps, template, champRanks){
     
     var img = document.createElement('img')
     img.setAttribute('class', 'champIcon')
+    
    
     img.style.borderColor = champColor(champCost(champRanks, compChamps[0]))
 
