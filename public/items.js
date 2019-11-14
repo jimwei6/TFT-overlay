@@ -111,6 +111,13 @@ function formItems(baseItem, subBaseItem){
     subImg.setAttribute('class', 'itemIcon')
     subImg.src = itemsPath  + "/" + SubBaseItem.name +".png"
     subImg.style.cssFloat = "left"
+    
+    subImg.onmouseover = function(){
+        createDescript(this, SubBaseItem.description)
+    }
+    subImg.onmouseout = function(){
+        destroyDescript(this)
+    }
 
     return subImg
  }
@@ -122,6 +129,13 @@ function formItems(baseItem, subBaseItem){
     mainImg.setAttribute('class', 'itemIcon')
     mainImg.style.cssFloat ="right"
     mainImg.src = itemsPath + "/" + mainItem.name + ".png"
+    
+    mainImg.onmouseover = function(){
+        createCmpDescript(this, mainItem.description)
+    }
+    mainImg.onmouseout = function(){
+        destroyDescript(this)
+    }
     return mainImg
  }
 
@@ -134,6 +148,13 @@ function displayBaseItem(baseItem){
     var img = document.createElement('img')
     img.setAttribute('class', 'itemIcon')
     img.src = itemsPath + "/" + baseItem.name + ".png"
+
+    img.onmouseover = function(){
+        createDescript(this, baseItem.description)
+    }
+    img.onmouseout = function(){
+        destroyDescript(this)
+    }
     
     div.appendChild(img)
     
@@ -144,46 +165,46 @@ function displayBaseItem(baseItem){
 function displayTitle(baseItem){
 
     var title = document.createElement('h1')
-    title.innerHTML = baseItem.name
+    title.innerHTML = baseItem.name 
     title.setAttribute("class", "nameDisplay")
     itemsClone.getElementById(baseItem.name).appendChild(title)
 
 }
 
+function createDescript(dis, desc){
+    var parentElement = dis.parentElement
+    var prgh = document.createElement('span')
+    prgh.setAttribute('class', "itemDescript")
+    prgh.innerHTML = desc
 
-// <!-- <script>
+    prgh.style.top = dis.style.top
+    prgh.style.left = dis.style.left + "2.5vw"
 
-//         document.getElementById("testMessage").innerHTML = "test started"
-//         var icon = $(".itemIcon")
-//         var LINE = require('./lines.js')
-              
-//         function manageLines(){
+  
+    parentElement.prepend(prgh)
+}
 
-            
-            
-            
-//             var div1 = $('#firstDiv');
-//             var div2 = $('#lastDiv');
+function createCmpDescript(dis, desc){
+    var parentElement = dis.parentElement
+    var prgh = document.createElement('span')
+    prgh.setAttribute('class', "itemDescript")
+    prgh.innerHTML = desc
 
-//             var div3 = $('#firstDiv2');
-//             var div4 = $('#lastDiv2');
+    prgh.style.top = dis.style.top
+    prgh.style.left = dis.style.left + "8.5vw"
 
-//             var line1r = new LINE.itemLines(div1.offset().left, div1.offset().top, div1.offset().left, div2.offset().top, $('#line1'))
-//             var line2r =new LINE.itemLines(div3.offset().left, div3.offset().top, div3.offset().left, div4.offset().top, $('#line2'))
+  
+    parentElement.prepend(prgh)
+}
 
-//             var loil = [line1r, line2r, "empty"]
+function destroyDescript(dis){
+    
+    dis.parentElement.removeChild(dis.parentElement.firstChild)
 
-//             LINE.renderLines(loil);
-            
+}
            
            
 
     
 
-
-//         }
-//     //    manageLines()
-
-
-//     </script> -->
     

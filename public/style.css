@@ -40,6 +40,7 @@ top: 0.75vh;
 right: 1.5vw;
 color: white;
 
+
 }
 
 #dragBar{
@@ -86,7 +87,7 @@ color: white;
   
   /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
   .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 1.5vw; /* Set a specific slider handle width */
     height: 1.5vh; /* Slider handle height */
@@ -102,12 +103,14 @@ color: white;
   }
 
   .infoBox{
-    background-color: rgb(58, 38, 38);
+
+  background-color: rgb(50, 50, 50);
     height: 91vh;
     width: 80vw;
     position: absolute;
     top: 4.5vh;
     left: 10vw;
+  
   }
  
   .sheetTitle{
@@ -145,34 +148,7 @@ color: white;
     clear: both;
     display: table;
   }
-  /* .gridContainer{
-
-    display: grid;
-    grid-template-areas: 
-    'demon demon demon glacial glacial glacial noble noble noble'
-    'void void void pirate pirate pirate wild wild wild'
-    'yordle yordle yordle dragon dragon hextech hextech exile robot'
-    'imperial imperial imperial ninja ninja ninja phantom phantom phantom';
-    grid-gap: 5px;
-    background-color:rgba(250, 250, 250, 0.5);
-    padding: 5px;
-  
-  } */
-  
-  /* .Demon{ grid-area: demon;}
-  .Dragon{ grid-area: dragon;}
-  .Exile{ grid-area: exile;}
-  .Glacial{ grid-area: glacial;}
-  .Hextech{ grid-area: hextech;}
-  .Imperial{ grid-area: imperial;}
-  .Ninja{ grid-area: ninja;}
-  .Noble{ grid-area: noble;}
-  .Phantom{ grid-area: phantom;}
-  .Pirate{ grid-area: pirate;}
-  .Robot{ grid-area: robot;}
-  .Void{ grid-area: void;}
-  .Wild{ grid-area: wild;}
-  .Yordle{ grid-area: yordle;} */
+ 
 
   .col-c1 {width: 8.33%;}
   .col-c2 {width: 16.66%;}
@@ -211,13 +187,16 @@ color: white;
     border-color: #FFF;
     border-width: 0.5%;
     margin-top: 2%;
+-webkit-user-select: none;
   }
+
   
   .nameDisplay{
     color: white;
     text-align: center;
     font-size:   calc(0.30vh + 0.70vw);
   }
+ 
  .itemIcon{
    /* display: block; */
    height: 4vh;
@@ -226,8 +205,14 @@ color: white;
    border-style: solid;
    border-color: #FFF;
    border-width: 0.09vw;
-   -webkit-user-select: none;
+   -webkit-user-select: comp;
  }
+
+ img:hover{
+   border-color: black;
+ }
+
+
  .mainItem{
    position: relative;
    left: calc(2vw + (50% - 8vw) );
@@ -252,6 +237,25 @@ color: white;
    color:white;
    text-align: center;
    font-size:  calc(0.70vh + 0.36vw);
+   user-select: none;
+   pointer-events: none;
+ }
+
+ .itemDescript{
+   position: absolute;
+   z-index: 50;
+   width: auto;
+   height: auto;
+   min-width: 4vw;
+   min-height: 2vh;
+   /* white-space: nowrap; */
+   text-align: left;
+   background-color: black;
+   border: 0.05vw solid gold;
+   user-select: none;
+   pointer-events: none;
+   color:white;
+   font-size:  calc(0.70vh + 0.36vw);
  }
 .lines{
   stroke:white; 
@@ -262,11 +266,10 @@ color: white;
   background-color: black;
   color: white;
   font-size: 2vh;
-  width: 4vw;
+  width: 3vw;
   -webkit-user-select: none;
   height: 2vh;
   display: flex;
-  text-align: center;
  
 }
 
@@ -300,7 +303,7 @@ color: white;
 }
 
 #transButtontxt{
-  position: inherit;
+position: inherit;
   font-size: calc(0.55vh + 0.45vw); 
   left:1.25vw;
   top: -0.5vh;
