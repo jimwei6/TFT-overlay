@@ -52,26 +52,21 @@ function displayItemBlock(baseItem){
 
 
  function connectSubs(){
-    
     var svg = document.createElementNS(svgNS, 'svg')
     svg.setAttribute('width', "4vw")
     svg.setAttribute('height', "2vh")
-
     var line = document.createElementNS(svgNS, 'line')
     line.setAttribute('class', 'lines')
     line.setAttribute('x1', "0")
     line.setAttribute('y1', "2vh")
     line.setAttribute('x2', "4vw")
     line.setAttribute('y2', "2vh")
-
     svg.appendChild(line)
-
     return svg
  }
 
 //decides which item is formed based on number and matrix pos in items.json
 function formItems(baseItem, subBaseItem){
-
     if(subBaseItem.itemNum < baseItem.itemNum)
     {
         forgedItem = mainItems[subBaseItem.itemNum][Math.abs(subBaseItem.itemNum - baseItem.itemNum)]
@@ -80,7 +75,6 @@ function formItems(baseItem, subBaseItem){
     {
         forgedItem = mainItems[baseItem.itemNum][subBaseItem.itemNum - baseItem.itemNum]
     }
-
     return forgedItem
 
 }
@@ -92,11 +86,9 @@ function formItems(baseItem, subBaseItem){
  function displaySubsets(subBaseItem, mainItem, baseItem){
     var subDiv = document.createElement('div')
     subDiv.setAttribute('class', 'subItem')
-
     subDiv.appendChild(subImage(subBaseItem))
     subDiv.appendChild(connectSubs())
     subDiv.appendChild(subMainImage(mainItem))
-
     itemsClone.getElementById(baseItem.name).appendChild(subDiv)
 
  }
@@ -106,7 +98,6 @@ function formItems(baseItem, subBaseItem){
 
 // take an item and make it a sub image. image is returned
  function subImage(SubBaseItem){
-
     var subImg = document.createElement('img')
     subImg.setAttribute('class', 'itemIcon')
     subImg.src = itemsPath  + "/" + SubBaseItem.name +".png"
@@ -118,18 +109,15 @@ function formItems(baseItem, subBaseItem){
     subImg.onmouseout = function(){
         destroyDescript(this)
     }
-
     return subImg
  }
 
  // take a mainitem and make it an image. image is returned
  function subMainImage(mainItem){
-
     var mainImg = document.createElement('img')
     mainImg.setAttribute('class', 'itemIcon')
     mainImg.style.cssFloat ="right"
-    mainImg.src = itemsPath + "/" + mainItem.name + ".png"
-    
+    mainImg.src = itemsPath + "/" + mainItem.name + ".png" 
     mainImg.onmouseover = function(){
         createCmpDescript(this, mainItem.description)
     }
@@ -155,9 +143,7 @@ function displayBaseItem(baseItem){
     img.onmouseout = function(){
         destroyDescript(this)
     }
-    
     div.appendChild(img)
-    
     itemsClone.getElementById(baseItem.name).appendChild(div)
 }
 
@@ -176,12 +162,11 @@ function createDescript(dis, desc){
     var prgh = document.createElement('span')
     prgh.setAttribute('class', "itemDescript")
     prgh.innerHTML = desc
-
-    prgh.style.top = dis.style.top
+    prgh.style.top = dis.style.top 
     prgh.style.left = dis.style.left + "2.5vw"
-
-  
+    prgh.style.minWidth = "6.5vw"
     parentElement.prepend(prgh)
+    
 }
 
 function createCmpDescript(dis, desc){
@@ -189,11 +174,9 @@ function createCmpDescript(dis, desc){
     var prgh = document.createElement('span')
     prgh.setAttribute('class', "itemDescript")
     prgh.innerHTML = desc
-
+    prgh.style.minWidth = "12.5vw"
     prgh.style.top = dis.style.top
     prgh.style.left = dis.style.left + "8.5vw"
-
-  
     parentElement.prepend(prgh)
 }
 

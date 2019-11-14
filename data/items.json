@@ -62,7 +62,7 @@
             {"name": "Trap_Claw", "itemNum": 51, "description": "Gain a shield each round that blocks first enemy spell that hit. Enemy who breaks shield is stunned for 5 seconds"}],
         
         [{"name": "Force_of_Nature", "itemNum": 52, "description": "Gain 1 extra team size"},
-            {"name": "Mittens", "itemNum": 53, "description": "+20% crit & dodge chance, wearer is also a Yordle"}],
+            {"name": "Berserker's_Axe", "itemNum": 53, "description": "+20% crit & dodge chance, wearer is also a Berserker"}],
 
         [{"name": "Thief's_Gloves", "itemNum": 54, "description": "Wearer equips 2 random items each round. Quality based on player level. Cannot only be equipped to champ with no item"}]
     ]}

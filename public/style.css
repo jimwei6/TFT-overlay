@@ -244,19 +244,16 @@ color: white;
  .itemDescript{
    position: absolute;
    z-index: 50;
-   width: auto;
-   height: auto;
-   min-width: 4vw;
-   min-height: 2vh;
-   /* white-space: nowrap; */
-   text-align: left;
+   text-align: center;
+   margin: auto;
    background-color: black;
    border: 0.05vw solid gold;
    user-select: none;
    pointer-events: none;
    color:white;
    font-size:  calc(0.70vh + 0.36vw);
- }
+   }
+
 .lines{
   stroke:white; 
   stroke-width:3;
