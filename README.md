@@ -12,4 +12,4 @@ Things trying to improve
 
 [pre 9.22](https://github.com/jimwei0620/TFT-overlay/releases/tag/1)
 
-[9.22 R.O.E (windows)](https://github.com/jimwei0620/TFT-overlay/releases/tag/9.22)
+[9.22.2 R.O.E ](https://github.com/jimwei0620/TFT-overlay/releases/tag/9.22.2)
