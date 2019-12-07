@@ -73,3 +73,17 @@ body {
 .switch-btn:hover{
     background-color: rgba(2, 159, 250, 0.884);
 }
+
+#info-bar{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+}
+
+#h-info, #desc-img{
+    float:left;
+}
+
+#h-desc, #desc-text{
+    float: right;
+}
