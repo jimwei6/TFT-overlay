@@ -8,7 +8,7 @@ const ITEMS = require('../data/items.json')
 const BASEITEMS = ITEMS[0]
 const CPDITEMS = ITEMS[1]
 
-const path = 
+const path = __dirname.replace("public", "resources/itemIcons")
 
 document.getElementById("info-bar").appendChild(HCLONE)
 //document.getElementById("info-bar").appendChild(VCLONE)
@@ -16,7 +16,7 @@ document.getElementById("info-bar").appendChild(HCLONE)
 function initMain(){
     var mImg = document.createElement('img')
     mImg.setAttribute("class", 'itemIcon')
-    mImg.src = 
+    mImg.src = path + "/" +
     
     var subImg = document.createElement('img')
     subImg.setAttribute("class", 'itemIcon')
