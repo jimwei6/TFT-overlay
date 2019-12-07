@@ -10,22 +10,21 @@ const CPDITEMS = ITEMS[1]
 
 const path = __dirname.replace("public", "resources/itemIcons")
 
-document.getElementById("info-bar").appendChild(HCLONE)
+
 //document.getElementById("info-bar").appendChild(VCLONE)
 
-function initMain(){
+function initMain(item){
     var mImg = document.createElement('img')
     mImg.setAttribute("class", 'itemIcon')
-    mImg.src = path + "/" +
+    mImg.src = path + "/" + itemName + '.png'
     
     var subImg = document.createElement('img')
     subImg.setAttribute("class", 'itemIcon')
-    subImg.src =
+    subImg.src = path + "/" + itemName + '.png'
 
     var subImg2 = document.createElement('img')
     subImg2.setAttribute("class", 'itemIcon')
-    subImg2.src = 
+    subImg2.src =  path + "/" + itemName + '.png'
     
 }
-
-HCLONE.getElementById("hmain").appendChild(
+document.getElementById("info-bar").appendChild(HCLONE)
