@@ -6,47 +6,77 @@ const globalShortcut = electron.globalShortcut
 
 const {app, BrowserWindow} = electron
 
-let mainWindow
+let mainWindow, subWindow, subWindow2
 
 function windowInit() {                 //set up the window and its defaults
-    mainWindow = new BrowserWindow({
-        transparent: true,
-        frame: false,
-        title: "LoL tft Overlay",
-        titleBarStyle: "hiddenInset",
+    mainWindow = new BrowserWindow({       
+        darkTheme: true,
         webPreferences: {nodeIntegration: true}, 
+        transparent: true,
         alwaysOnTop: true,
-        minHeight:720,
-        minWidth: 1280
+        frame: false,
+        nodeIntegration: true,
     })
-    mainWindow.maximize()
-     //mainWindow.setIgnoreMouseEvents(true, {forward: true});
+     mainWindow.maximize()
+     mainWindow.setIgnoreMouseEvents(true, {forward: true})
+
+     mainWindow.on('closed', function(){
+         mainWindow = null
+     })
  }
+
+ function childWindows(windp){   
+    windp = new BrowserWindow({
+        webPreferences:{nodeIntegration: true},
+        alwaysOnTop: true,
+        parent: mainWindow,
+        frame: false,
+        transparent:true,
+        minHeight: 150,
+        minWidth: 150,
+        height: 300,
+        width: 150,
+        nodeIntegration:true,
+        x: 10,
+        y: 20
+    })
+
+    windp.on('closed', function(){
+        windp = null
+    })
+
+    windp.loadURL(url.format({
+        pathname: path.join(__dirname, 'items.html'),
+        protocol: 'file',
+        slashes: true
+    }))
+ }
+
 
 function loadHTML(){                    //load index.html into the browser window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
-        slashes: true,
+        slashes: true
+    }))
+}
+
+function loadSubHTML(windp){
+    windp.loadURL(url.format({
+        pathname: path.join(__dirname, 'items.html'),
+        protocol: 'file',
+        slashes: true
     }))
 }
 
 app.on('ready',()=>{                    //run when app is ready, 
 
     windowInit()
+    loadHTML()   
 
-    loadHTML()
-    
-    // globalShortcut.register('alt+ctrl+5', function(){
-    //     console.log("key pressed")
-    //     if(mainWindow.isFocused != true){
-           
-    //         mainWindow.focus()
-    //     }   
-    // })
-
+    childWindows(subWindow)
+    childWindows(subWindow2)
 })
-
 
 
 

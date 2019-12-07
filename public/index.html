@@ -3,347 +3,39 @@
 <head id="head">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>window.$ = window.jQuery = require('jquery');</script>
-
-    <template>
-        <div class="infoBox" id="Elements"  style="display: none">
-           
-            <div class="row">
-                <div class="col-c4" id="Crystal" >
-                    
-                </div>
-                
-                <div class="col-c4" id="Desert">
-                    
-                </div>
-
-                <div class="col-c4" id="Electric">
-                    
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-c4" id="Glacial">
-                   
-                </div>
-    
-                <div class="col-c4" id="Inferno">
-                    
-                </div>
-    
-                <div class="col-c4" id="Light">
-                    
-                </div>
-    
-            </div>
-            <div class="row">
-                <div class="col-c3" id="Steel">
-                    
-                </div>
-        
-                <div class="col-c3" id="Mountain">
-                    
-                </div>
-        
-                <div class="col-c3" id="Ocean">
-                   
-                </div>
-
-        <div class="col-c3" id="Poison">
-                    
-                </div>
-
-                
-            </div>
-            <div class="row">
-                <div class="col-c4" id="Shadow">
-                    
-                </div>
-            
-                <div class="col-c4" id="Wind">
-                    
-                </div>
-            
-                <div class="col-c4" id="Woodland">
-                   
-                </div>
-            
-            </div>
-            
-            <h class="sheetTitle">Origins</h>
-        </div>
-    </template>
-    
-    <template>
-        <div class="infoBox" id="Classes" style="display: none">
-            <div class="row">
-
-                <div class="col-c4" id="Alchemist">
-                    
-                </div>
-                <div class="col-c4" id="Assassin">
-                    
-                </div>
-                <div class="col-c4" id="Avatar">
-                   
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col-c4" id="Berserker">
-                    
-                </div>
-                <div class="col-c4" id="Blademaster">
-                    
-                </div>
-                <div class="col-c4" id="Summoner">
-                    
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-c4" id="Druid">
-                    
-                </div>
-                <div class="col-c4" id="Mage">
-                    
-                </div>
-                <div class="col-c4" id="Mystic">
-                  
-                </div>
-
-            </div>
-
-            <div class="row">
-
-              
-                <div class="col-c4" id="Predator">
-                    
-                </div>
-                <div class="col-c4" id="Ranger">
-                   
-                </div>
-                <div class="col-c4" id="Warden">
-                   
-                </div>
-
-            </div>
-            <h class="sheetTitle">Class</h>
-
-        </div>
-    </template>
- 
-    <template> 
-        <div class="infoBox" id="Itemizations" style="display: none">
-
-            <div class="row">
-                <div class="col-i20" id="B._F._Sword">     
-              
-                </div>
-                <div class="col-i20" id="Recurve_Bow">
-                    </div>
-                <div class="col-i20"  id="Chain_Vest">
-                    
-                    </div>
-                <div class="col-i20" id="Negatron_Cloak">
-                
-                    </div>
-                <div class="col-i20"  id="Needlessly_Large_Rod">
-                
-                    </div>
-            </div>
-
-            <div class="row">
-                <div class="col-i3"  id="Tear_of_the_Goddess">
-                   
-                    </div>
-                <div class="col-i3" id="Giant's_Belt">
-                    
-                    </div>
-                <div class="col-i3" id="Spatula">
-                   
-                </div>
-                <div class="col-i3"  id="Sparring_Gloves">
-                    
-                </div>
-                
-            </div>
-           
-
-        </div>
-    </template> 
-
-
-
-    <div>
-        <div onmouseover="clickE()" onmouseout="clickD()" onclick="closeWindow()" class="closeBar"  id="closeBar" style="float: right">
-            
-             <h id="x-shutOff">X</h>
-            
-            
-        </div>
-        <div onmouseover="clickE()" onmouseout="clickD()" class="clickable" id="dragBar" style="float: left">
-                <div class="slidecontainer" >
-                        <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
-                </div>
-        </div>   
-
-    </div>
-
-    <div id="transBar" onmouseover="clickE()" onmouseout="clickD()">   
-        <input id="transButton" type="checkbox" name="window_state" value="transparent" onclick="changeTransparency(this)">
-        <h1 id="transButtontxt">Click Through</h1>
-    </div>
-
-    
 </head>
 
+<body>   
+    <div id="title-bar" onmouseover="clickAllowed()" onmouseout="clickDisabled()">
+        <div id="title">
+            <span style="vertical-align: middle;">
+                        <!-- <img src="https://raw.githubusercontent.com/zeke/atom-icon/master/old-icon/2.png" style="width:20px;height:20px;"/> -->
+                </span>
+                Close Program
+        </div>
+        <div id="title-bar-btns">
+        <button onclick="closeWindow()" class="title-btns" id="close-btn"></button>
+        </div>
+    </div>   
 
-<body id="body" onresize="hideSheet('resize', true)" onmousedown="hideSheet('all', false)">
-
-    <p class="cBox"  onmouseover="showSheet('Class')" >Class</p>
-    
-    <p class="cBox" onmouseover="showSheet('Elements')" >Origin</p>
-    <p class="cBox"onmouseover="showSheet('Items')" >Items</p>
-
-    <img src="../resources/otherIcons/4wayArrow.png" id="menuBar">
-
-    <p id="testmessage" style="font-size: 20vh;"></p>
-
-    
-    <script src="items.js"></script>
-    <script src="class.js"></script>
-
-
-
-    <script>
-
-    
-   
-        
-        const electron = require('electron')            
-        const remote = electron.remote
-        const globalShortcut = electron.globalShortcut
-        var wind = remote.getCurrentWindow()
-        var mouseEnable = false;
-
-        var scrollbar = document.getElementById("myRange")
-      
-        var keepItems = false
-        var windowTransparent = false
-
-        var tabsOpen = false
-      
-
-        scrollbar.oninput = function() {
-            var value = parseFloat(this.value/100, 10)
-            document.getElementById("body").style.backgroundColor = "rgba(250, 250, 250, " + value.toString() +")"
-            document.getElementById("head").style.opacity = value;
-        }
-        
-        function clickE(){
-        
-            remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
-        }
-        function clickD(){
-            if(windowTransparent == true)
-            {
-            remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
-            }
-        }
-
-        function closeWindow(){
-            remote.getCurrentWindow().close()
-        }
-
-//edit this so work for other windows
-        
-        function changeTransparency(checkbox){
-            if(checkbox.checked){
-                windowTransparent = true
-                document.getElementById("menuBar").style.display = "none"
-                clickD()
-            }
-            else{
-                windowTransparent = false
-                document.getElementById("menuBar").style.display = "block"
-                clickE()
-            }
-        }
-
-        function hideSheet(name, bool)
-        {
-            
-            if(tabsOpen == true){
-
-                if(bool == true){ ///end up reopening window each time to prevent visual bugs
-
-                    document.getElementById("Itemizations").style.display = "none"                
-                    document.getElementById("Elements").style.display = "none"  
-                    document.getElementById("Classes").style.display = "none"
-                    clickD()
-
-                }
-                else{
-
-                    
-                
-                        document.getElementById("Itemizations").style.display = "none"  
-                        document.getElementById("Elements").style.display = "none"
-                        document.getElementById("Classes").style.display = "none"
-                        tabsOpen = false
-                        clickD()
-            
-                    
-                }
-            }
-        
-        }
-     
-        function showSheet(name)
-        {
-           
-            if(name == "Items"){
-               
-    
-                document.getElementById("Itemizations").style.display = "block"
-                document.getElementById("Elements").style.display = "none"
-                document.getElementById("Classes").style.display = "none"
-     
-              
-    
-            }
-            
-            if(name == "Elements")
-            {
-               
-                document.getElementById("Elements").style.display = "block"
-                document.getElementById("Classes").style.display = "none"
-                document.getElementById("Itemizations").style.display = "none"
-               
-            }
-
-            if(name == "Class")
-            {
-               
-                document.getElementById("Classes").style.display = "block"
-                document.getElementById("Elements").style.display = "none"
-                document.getElementById("Itemizations").style.display = "none"
-               
-            }
-            tabsOpen = true
-            clickE()
-
-        }
-
-    </script>
-   
-   
-        
-    
+    <p id='testmessage'></p>
 </body>
+
+<script>
+    const electron = require('electron')
+    const remote = electron.remote
+
+    function closeWindow(){
+        window.close()
+    }
+    function clickAllowed(){
+        remote.getCurrentWindow().setIgnoreMouseEvents(false, {forward: true})
+    }
+
+    function clickDisabled(){
+        remote.getCurrentWindow().setIgnoreMouseEvents(true, {forward: true})
+    }
+</script>
 </html> 
 
             

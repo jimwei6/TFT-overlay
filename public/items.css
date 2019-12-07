@@ -1,15 +1,12 @@
- body{
-    background-color: rgba(250, 250, 250, 0.1); 
+body {
     padding: 0px;
     margin: 0px;
-} 
+}
+
 
 #title-bar {
+    -webkit-app-region: drag;
     height: 20px;
-    width: 125px;
-    position: fixed;
-    top: 0;
-    right: 0px;
     text-align: center;
     line-height: 20px;
     vertical-align: middle;
@@ -17,15 +14,15 @@
     padding: none;
     margin: 0px;
     border: 1px solid white;
-    border-left: none;
     border-bottom: none;
+    border-right: none;
     border-radius: 5px;
 }
 
 #title {
     position: fixed;
     top: 0px;
-    right: 30px;
+    left: 6px;
     color:white;
     -webkit-user-select: none;
 }
@@ -50,4 +47,29 @@
 
 .title-btns:hover{
     background-color: rgb(248, 53, 53);
+}
+#layout-bar{
+  font-size: 0;
+  width: auto;
+}
+
+#layout-buttons{
+    position: fixed;
+    left: 5px;
+    width: auto;
+    height: auto;
+}
+
+.switch-btn{    
+    height: 17.5px;
+    width: 18px;
+    vertical-align: top;
+    border-radius: 2.5px;
+    border-top: none;
+    background-color: rgba(92, 151, 206, 0.884);
+    text-align: center;
+}
+
+.switch-btn:hover{
+    background-color: rgba(2, 159, 250, 0.884);
 }
