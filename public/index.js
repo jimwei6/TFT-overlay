@@ -33,12 +33,13 @@ function windowInit() {                 //set up the window and its defaults
         frame: false,
         transparent:true,
         minHeight: 150,
-        minWidth: 150,
-        height: 300,
-        width: 150,
+        minWidth: 120,
+        height: 330,
+        width: 120,
         nodeIntegration:true,
         x: 10,
-        y: 20
+        y: 20,
+        resizable: false
     })
 
     windp.on('closed', function(){

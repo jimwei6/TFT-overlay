@@ -24,12 +24,14 @@
 
     <template id="v-tplt">
         <div id="v-all">
-            <div id="v-main"></div>
-            <div id="v-bldcmp"></div> 
-            <div id="v-desc"></div>
+            <div id="v-items">
+                <div id="v-main"></div>
+                <div id="v-bldcmp"></div>
+            </div> 
+            <div id="v-desc">
+            </div>
         </div>
     </template>
-
     <div id="title-bar">
         <div id="title">
             <span style="vertical-align: middle;">
@@ -41,46 +43,39 @@
               <button onclick="closeWindow()" class="title-btns" id="close-btn"></button>
          </div>
     </div>
+    <div id="winC">
+        <div id="layout-bar">   
+            <div id="layout-buttons">    
+                <button class="switch-btn" id="horizontal-btn" onclick="changeLayout('horizontal')">H</button>
+                <button class="switch-btn" id="vertical-btn" onclick="changeLayout('vertical')">V</button>
+            </div>
+        </div>
 
-    <div id="layout-bar">   
-        <div id="layout-buttons">    
-            <button class="switch-btn" id="horizontal-btn" onclick="changeLayout('horizontal')">H</button>
-            <button class="switch-btn" id="vertical-btn" onclick="changeLayout('vertical')">V</button>
-            <button class="switch-btn" id="reset-btn" onclick="changeLayout('reset')">R</button>
+        <div id="info-bar">
+            
         </div>
     </div>
-
-    <div id="info-bar">
-        
-    </div>
     <script>
+        var winState = "Vertical"
         function closeWindow(){
             window.close()
         }
-
-        function changeLayout(layout){
+        
+    function changeLayout(layout){
             switch(layout){
                 case "horizontal":
                     if(window.innerWidth <= window.innerHeight){
                         window.resizeTo(window.innerHeight, window.innerWidth)
                         //change layout
+                        winState = "Horizontal"
                     }
                     break;
                 case "vertical":
                     if(window.innerWidth >= window.innerHeight){
                             window.resizeTo(window.innerHeight, window.innerWidth)
                             //change layout
+                         winState = "Vertical"
                         }
-                    break;
-                case "reset":
-                    if(window.innerWidth >= window.innerHeight){
-                        window.resizeTo(300, 150)
-                        //change layout
-                    }
-                    else {
-                        window.resizeTo(150, 300)
-                        //change layout
-                    }
                     break;
                 default:
                     break;
@@ -91,3 +86,4 @@
     <script src="./items.js"></script>
 </body>
 </html>
+

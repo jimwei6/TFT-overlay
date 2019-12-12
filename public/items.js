@@ -1,12 +1,12 @@
-const HTEMPLATE = document.getElementById("h-tmplt")
-const VTEMPLATE = document.getElementById("v-tmplt")
+const HTEMPLATE = document.getElementById("h-tplt")
+const VTEMPLATE = document.getElementById("v-tplt")
 
 const HCLONE = HTEMPLATE.content.cloneNode(true)
 const VCLONE = VTEMPLATE.content.cloneNode(true)
 
 const ITEMS = require('../data/items.json')
-const BASEITEMS = ITEMS[0]
-const CPDITEMS = ITEMS[1]
+const BASEITEMS = ITEMS[0].baseItems
+const CPDITEMS = ITEMS[1].mainItems
 
 const path = __dirname.replace("public", "resources/itemIcons")
 
@@ -15,35 +15,49 @@ const path = __dirname.replace("public", "resources/itemIcons")
 
 function initMain(item){
     var mImg = document.createElement('img')
-    mImg.setAttribute("class", 'itemIcon')
+    mImg.setAttribute("class", 'vitemIcon')
     mImg.src = path + "/" + item.name + '.png'
-    
-    var subImg = document.createElement('img')
-    subImg.setAttribute("class", 'itemIcon')
-    subImg.src = path + "/" +  "B._F._Sword" + ".png"
 
-    var subImg2 = document.createElement('img')
-    subImg2.setAttribute("class", 'itemIcon')
-    subImg2.src =  path + "/" + formItems(item, BASEITEMS[0]).name + '.png'
-
-    HCLONE.getElementById('h-main').appendChild(mImg)
-    HCLONE.getElementById('h-main').appendChild(subImg)
-    HCLONE.getElementById('h-main').appendChild(subImg2)
-    
+    VCLONE.getElementById('v-main').appendChild(mImg)    
 }
 
 function formItems(baseItem, baseItem2){
-    if(subBaseItem.itemNum < baseItem.itemNum)
+    if(baseItem2.itemNum < baseItem.itemNum)
     {
-        forgedItem = mainItems[baseItem2.itemNum][Math.abs(baseItem2.itemNum - baseItem.itemNum)]
+        forgedItem = CPDITEMS[baseItem2.itemNum][Math.abs(baseItem2.itemNum - baseItem.itemNum)]
     }
     else
     {
-        forgedItem = mainItems[baseItem.itemNum][baseItem2.itemNum - baseItem.itemNum]
+        forgedItem = CPDITEMS[baseItem.itemNum][baseItem2.itemNum - baseItem.itemNum]
     }
-    return forgedItem
+    return forgedItem.name
 
 }
 
+function initbldcmp(base){
+    BASEITEMS.forEach(element => {
+        var ndiv = document.createElement('div')
+        
+        var bImg = document.createElement('img')
+        bImg.setAttribute("class", 'vitemIcon')
+        bImg.src = path + "/" + element.name + '.png'
+
+        var cpImg = document.createElement('img')
+        cpImg.setAttribute("class", 'vitemIcon')
+        cpImg.src = path + "/" + formItems(base, element) + '.png'
+
+        ndiv.appendChild(bImg)
+        ndiv.appendChild(cpImg)
+        VCLONE.getElementById('v-bldcmp').appendChild(ndiv)
+        
+    });
+
+
+    
+}
+
+
+
 initMain(BASEITEMS[0])
-document.getElementById("info-bar").appendChild(HCLONE)
+initbldcmp(BASEITEMS[0])
+document.getElementById("info-bar").appendChild(VCLONE)

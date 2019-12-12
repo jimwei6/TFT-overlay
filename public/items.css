@@ -54,9 +54,9 @@ body {
 }
 
 #layout-buttons{
-    position: fixed;
+    position: relative;
     left: 5px;
-    width: auto;
+    width: 80vw;
     height: auto;
 }
 
@@ -75,9 +75,11 @@ body {
 }
 
 #info-bar{
-    background-color: black;
-    height: 100px;
-    width: 100px;
+    position: relative;
+    top: 2.5vh;
+    /* background-color: black; */
+    height: auto;
+    width: auto;
 }
 
 #h-info, #desc-img{
@@ -86,4 +88,37 @@ body {
 
 #h-desc, #desc-text{
     float: right;
+}
+
+.vitemIcon{
+    height: 9.4vh;
+    width: 9.4vh;
+    vertical-align: middle;
+    -webkit-user-select: none;
+}
+
+#v-main{
+    border: yellow solid 2px;
+    float: left;
+    position: relative;
+    left: 5vw;
+}
+
+#v-bldcmp{
+    position: relative;
+    left: 10px;
+    width: fit-content;
+    overflow: hidden;
+    border: grey solid 2px;
+
+}
+#v-items{
+    overflow: hidden;
+}
+body{
+    background-color: black;
+
+    width: 100%;
+    height: 100%;
+    
 }
