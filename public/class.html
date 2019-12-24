@@ -1,72 +1,51 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="items.css">
-  
+    <link rel="stylesheet" type="text/css" href="class.css">
 </head>
 <body>
-    <template id="h-tplt">
-        <div id="h-all">
-            <div id="h-info">
-                <div id="h-main"></div>
-                <div id="h-build"></div>
-                <div id="h-cmp"></div>
-            </div>
-            <div id="h-desc">
-                <div id="desc-img">
-
-                </div>
-                <div id="desc-text">
-
-                </div>
-            </div>
-        </div>
-    </template>
-
-    <template id="v-tplt">
-        <div id="v-all">
-            <div id="v-items">
-                <div id="v-main"></div>
-                <div id="v-bldcmp"></div>
-            </div> 
-            <div id="v-desc">
-            </div>
-        </div>
-    </template>
     <div id="title-bar">
         <div id="title">
             <span style="vertical-align: middle;">
                 <!-- <img src="https://raw.githubusercontent.com/zeke/atom-icon/master/old-icon/2.png" style="width:20px;height:20px;"/> -->
             </span>
-            Items
          </div>
          <div id="title-bar-btns">
               <button onclick="closeWindow()" class="title-btns" id="close-btn"></button>
          </div>
     </div>
-    <div id="winC">
-        <div id="layout-bar">   
-            <div id="layout-buttons">    
-                <button class="switch-btn" id="horizontal-btn" onclick="changeLayout('horizontal')">H</button>
-                <button class="switch-btn" id="vertical-btn" onclick="changeLayout('vertical')">V</button>
-            </div>
-        </div>
-
-        <div id="info-bar">
-            <div id="vinfo"></div>
-            <div id="hinfo"></div>
+    <div id="layout-bar">   
+        <div id="layout-buttons">    
+            <button class="switch-btn" id="horizontal-btn" onclick="changeLayout('horizontal')">H</button>
+            <button class="switch-btn" id="vertical-btn" onclick="changeLayout('vertical')">V</button>
         </div>
     </div>
-    <script>
+   
+    <template id="hclass-tmplt">
+        <div id="htab">
+           
+        </div>
+        <div id="htab-content">
+            <!-- Tab content -->
+          
+        </div>
+    </template>
+  
+    <div id="info-bar">
+
+    </div>
+
+  <script>
         var winState = "Vertical"
         function closeWindow(){
             window.close()
         }
-        
+
+       
     function changeLayout(layout){
             switch(layout){
                 case "horizontal":
                     if(window.innerWidth <= window.innerHeight){
-                        window.resizeTo(300, 150)
+                        window.resizeTo(400, 150)
                         //change layout
                         document.getElementById('hinfo').style.display = "initial"
                         document.getElementById('vinfo').style.display = "none"
@@ -88,7 +67,6 @@
         }
     </script>
 
-    <script src="./items.js"></script>
+    <script src="class.js">
+    </script>
 </body>
-</html>
-

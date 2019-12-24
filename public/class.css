@@ -1,6 +1,10 @@
 body {
     padding: 0px;
     margin: 0px;
+    border-radius: 8px;
+    border-right:  white dashed 2px;
+    border-left: white dashed 2px;
+    border-bottom: white dashed 2px
 }
 
 
@@ -74,97 +78,56 @@ body {
     background-color: rgba(2, 159, 250, 0.884);
 }
 
-#info-bar{
-    position: relative;
-    top: 2.5vh;
-    /* background-color: black; */
-    height: auto;
-    width: auto;
-}
-
-#h-info, #desc-img{
-    float:left;
-}
-
-#h-desc, #desc-text{
-    float: right;
-}
-
-.vitemIcon{
-    height: 9.4vh;
-    width: 9.4vh;
-    vertical-align: middle;
-    -webkit-user-select: none;
-}
-
-#v-main{
-    border: yellow solid 2px;
+.htab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .htab button {
+    background-color: inherit;
     float: left;
-    position: relative;
-    left: 5vw;
-}
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
 
-#v-bldcmp{
-    position: relative;
-    left: 10px;
-    width: fit-content;
-    overflow: hidden;
-    border: grey solid 2px;
+  
+  /* Style the tab content */
+  .htabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+  .htabcontent {
+    animation: fadeEffect 0.5s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
 
-}
-#v-items{
-    overflow: hidden;
-}
-body{
-    /* background-color: black; */
-
-    width: 100%;
-    height: 100%;
+  .htablinks{
     
-}
-
-.hitemIcon{
-    width: 10vw;
-    height: 10vw;
-    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    transition: 0.1s;
+  } 
+  .htablinks:active{
+    height: 30px;
+  }
+  .hchampIcon{
+    height: 50px;
+    width:  50px;
     -webkit-user-select: none;
-}
-
-#h-main{
+  }
+  #info-bar{
     position: relative;
-    left: 5px;
-    border: yellow solid 2px;
-    width: fit-content;
-    height: fit-content;
-}
-#h-build{
-    position: relative;
-    top: 4px;
-    left: 10px;
-    border-top: grey solid 1px;
-    border-right: grey solid 1px;
-    border-left: grey solid 1px;
-}
-#h-cmp{
-    position: relative;
-    top: 4px;
-    left: 10px;
-    border-bottom: grey solid 1px;
-    border-right: grey solid 1px;
-    border-left: grey solid 1px;
-}
-
-.hitemIcon{
-    transition: 0.1s;
-}
-.hitemIcon:active{
-    width:25px;
-    height: 25px;
-} 
-.vitemIcon{
-    transition: 0.1s;
-}
-.vitemIcon:active{
-    width:25px;
-    height: 25px;
-} 
+    top: 5px;
+  }

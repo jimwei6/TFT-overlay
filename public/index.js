@@ -6,7 +6,7 @@ const globalShortcut = electron.globalShortcut
 
 const {app, BrowserWindow} = electron
 
-let mainWindow, subWindow, subWindow2
+let mainWindow, subWindow, subWindow2, subWindow3
 
 function windowInit() {                 //set up the window and its defaults
     mainWindow = new BrowserWindow({       
@@ -25,7 +25,7 @@ function windowInit() {                 //set up the window and its defaults
      })
  }
 
- function childWindows(windp){   
+ function childWindows(windp, w, h, htm, x ,y){   
     windp = new BrowserWindow({
         webPreferences:{nodeIntegration: true},
         alwaysOnTop: true,
@@ -34,11 +34,11 @@ function windowInit() {                 //set up the window and its defaults
         transparent:true,
         minHeight: 150,
         minWidth: 120,
-        height: 330,
-        width: 120,
+        height: h,
+        width: w,
         nodeIntegration:true,
-        x: 10,
-        y: 20,
+        x: x,
+        y: y,
         resizable: false
     })
 
@@ -47,7 +47,7 @@ function windowInit() {                 //set up the window and its defaults
     })
 
     windp.loadURL(url.format({
-        pathname: path.join(__dirname, 'items.html'),
+        pathname: path.join(__dirname, htm + '.html'),
         protocol: 'file',
         slashes: true
     }))
@@ -75,8 +75,8 @@ app.on('ready',()=>{                    //run when app is ready,
     windowInit()
     loadHTML()   
 
-    childWindows(subWindow)
-    childWindows(subWindow2)
+    childWindows(subWindow, 300, 150, 'items', 10, 20)
+    childWindows(subWindow3, 400, 150, 'class', 10, 500)
 })
 
 

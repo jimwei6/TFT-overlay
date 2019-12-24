@@ -33,29 +33,29 @@
 
     {"class":[
         {"name":"Alchemist", "champions":["Singed"],
-        "description": "can move through other units and never stop moving", "tiers":""},
+        "description": "can move through other units and never stop moving", "tiers":"", "url" : "url('../resources/classIcons/Alchemist.png')"},
         {"name":"Assassin", "champions":["Diana", "LeBlanc", "Qiyana", "Nocturne", "Zed"],
-        "description":"Grants increased critical strike change and damage", "tiers":""},
+        "description":"Grants increased critical strike change and damage", "tiers":"" , "url" : "url('../resources/classIcons/Assassin.png')"},
         {"name":"Avatar", "champions":["Lux"], 
-        "description":"An Avatar's element is counted twice for trait bonuses", "tiers":""},
+        "description":"An Avatar's element is counted twice for trait bonuses", "tiers":"" , "url" : "url('../resources/classIcons/Avatar.png')"},
         {"name":"Berserker", "champions":["Renekton", "Jax", "Volibear", "DrMundo", "Sion", "Olaf"],
-        "description":"attacks have a chance to deal damage in a cone behind the target", "tiers":""},
+        "description":"attacks have a chance to deal damage in a cone behind the target", "tiers":"" , "url" : "url('../resources/classIcons/Berserker.png')"},
         {"name":"Blademaster", "champions":["Yasuo", "Sivir", "Aatrox", "Master_Yi"],
-        "description":"attacks have a chance to hit extra times", "tiers":""},
+        "description":"attacks have a chance to hit extra times", "tiers":"" , "url" : "url('../resources/classIcons/Blademaster.png')"},
         {"name":"Summoner", "champions":["Zyra", "Malzahar", "Azir", "Annie", "Yorick","Zed"],
-        "description":"Increases health and duration of their spawned allies, pets benefit from Element and Class bonuses", "tiers":""},
+        "description":"Increases health and duration of their spawned allies, pets benefit from Element and Class bonuses", "tiers":"" , "url" : "url('../resources/classIcons/Summoner.png')"},
         {"name":"Druid", "champions":["Ivern", "Maokai", "Neeko"],
-        "description":"Grants Druids health regeneration", "tiers":""},
+        "description":"Grants Druids health regeneration", "tiers":"", "url" : "url('../resources/classIcons/Druid.png')"},
         {"name":"Mage", "champions":["Vladimir", "Taliyah", "Syndra", "LeBlanc", "Veigar", "Brand"],
-        "description":"Grants a change after casting an bility to cast it again", "tiers":""},
+        "description":"Grants a change after casting an bility to cast it again", "tiers":"" , "url" : "url('../resources/classIcons/Mage.png')"},
         {"name":"Mystic", "champions":["Soraka", "Janna", "Master_Yi", "Nami"],
-        "description":"Grants all allies magic resist", "tiers":""},
+        "description":"Grants all allies magic resist", "tiers":"" , "url" : "url('../resources/classIcons/Mystic.png')"},
         {"name":"Predator", "champions":["Warwick", "Kog'Maw", "Skarner", "Rek'Sai"],
-        "description":"Attacks and abilities immediately kill low-health enemies", "tiers":""},
+        "description":"Attacks and abilities immediately kill low-health enemies", "tiers":"" , "url" : "url('../resources/classIcons/Predator.png')"},
         {"name":"Ranger", "champions":["Vayne", "Varus", "Ezreal", "Kindred", "Ashe", "Twitch"],
-        "description":"Grants a chance to gain a burst of attack speed", "tiers":""},
+        "description":"Grants a chance to gain a burst of attack speed", "tiers":"" , "url" : "url('../resources/classIcons/Ranger.png')"},
         {"name":"Warden", "champions":["Ornn", "Nasus", "Thresh", "Braum", "Nautilus", "Malphite", "Taric"],
-        "description":"Grants extra armor", "tiers":""}
+        "description":"Grants extra armor", "tiers":"" , "url" : "url('../resources/classIcons/Warden.png')"}
     ]
 
     }

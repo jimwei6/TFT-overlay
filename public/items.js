@@ -13,7 +13,7 @@ const path = __dirname.replace("public", "resources/itemIcons")
 
 //document.getElementById("info-bar").appendChild(VCLONE)
 
-function initMain(item){
+function vinitMain(item){
     var mImg = document.createElement('img')
     mImg.setAttribute("class", 'vitemIcon')
     mImg.src = path + "/" + item.name + '.png'
@@ -34,13 +34,23 @@ function formItems(baseItem, baseItem2){
 
 }
 
-function initbldcmp(base){
+
+function vinitbldcmp(base){
     BASEITEMS.forEach(element => {
         var ndiv = document.createElement('div')
         
         var bImg = document.createElement('img')
         bImg.setAttribute("class", 'vitemIcon')
         bImg.src = path + "/" + element.name + '.png'
+
+        bImg.addEventListener('click', function(){
+            document.getElementById("v-main").firstChild.src = bImg.src
+            var i = 0
+            document.getElementById("v-bldcmp").childNodes.forEach(n => {
+                n.lastChild.src = path + "/" + formItems(element, BASEITEMS[i]) + '.png'
+                i++
+            })
+        })
 
         var cpImg = document.createElement('img')
         cpImg.setAttribute("class", 'vitemIcon')
@@ -56,8 +66,51 @@ function initbldcmp(base){
     
 }
 
+function hinitMain(item){
+    var mImg = document.createElement('img')
+    mImg.setAttribute("class", "hitemIcon")
+    mImg.src = path + "/" + item.name + '.png'
+    HCLONE.getElementById("h-main").appendChild(mImg)
+
+}
+function hinitSub(){
+    BASEITEMS.forEach(element => {
+        var bImg = document.createElement('img')
+        bImg.setAttribute("class", 'hitemIcon')
+        bImg.src = path + "/" + element.name + '.png'
+        bImg.addEventListener('click', function(){
+            document.getElementById("h-main").firstChild.src = bImg.src
+            var i = 0
+            document.getElementById("h-cmp").childNodes.forEach(n => {
+                n.src = path + "/" + formItems(element, BASEITEMS[i]) + '.png'
+                i++
+            })
+        })
+        HCLONE.getElementById('h-build').appendChild(bImg)
+    })
+}
+function hinitbldcmp(base){
+    BASEITEMS.forEach(element => {
+        var cpImg = document.createElement('img')
+        cpImg.setAttribute("class", 'hitemIcon')
+        cpImg.src = path + "/" + formItems(base, element) + '.png'
+        HCLONE.getElementById('h-cmp').appendChild(cpImg)
+    })
+}
+
+vinitMain(BASEITEMS[0])
+vinitbldcmp(BASEITEMS[0])
+document.getElementById("vinfo").appendChild(VCLONE)
 
 
-initMain(BASEITEMS[0])
-initbldcmp(BASEITEMS[0])
-document.getElementById("info-bar").appendChild(VCLONE)
+hinitMain(BASEITEMS[0])
+hinitSub()
+hinitbldcmp(BASEITEMS[0])
+document.getElementById("hinfo").appendChild(HCLONE)
+
+if(window.innerWidth < window.innerHeight){
+    document.getElementById("hinfo").style.display = "none"
+}
+else{
+    document.getElementById("vinfo").style.display = "none"
+}
