@@ -1,10 +1,6 @@
 body {
     padding: 0px;
     margin: 0px;
-    border-radius: 8px;
-    border-right:  white dashed 2px;
-    border-left: white dashed 2px;
-    border-bottom: white dashed 2px
 }
 
 
@@ -78,22 +74,7 @@ body {
     background-color: rgba(2, 159, 250, 0.884);
 }
 
-.htab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .htab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
+
   
 
   
@@ -114,7 +95,6 @@ body {
   }
 
   .htablinks{
-    
     height: 32px;
     width: 32px;
     transition: 0.1s;
@@ -130,4 +110,74 @@ body {
   #info-bar{
     position: relative;
     top: 5px;
+  }
+
+  
+  #htab {
+    text-align: center;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  #htab button {
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+
+  
+  /* Style the tab content */
+  .vtabcontent {
+    display: none;
+    padding: 12px 6px;
+    border-top: none;
+    animation: fadeEffect 0.5s; 
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .vtablinks{
+    height: 32px;
+    width: 32px;
+    transition: 0.1s;
+  } 
+  .vtablinks:active{
+    height: 30px;
+  }
+  .vchampIcon{
+    height: 50px;
+    width:  50px;
+    -webkit-user-select: none;
+  }
+
+  #vtab{
+    position: relative;
+    left: 10px;
+    float: left;
+  }
+  #vtab-content{
+    float: right;
+  }
+
+  #vtab button {
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #hinfo{
+    border: 2px dashed white;
+    border-top: none;
+    overflow: hidden;
+  }
+
+  
+  #vinfo{
+    border: 2px dashed white;
+    overflow: hidden;
+    border-top: none; 
   }

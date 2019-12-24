@@ -1,12 +1,73 @@
 const INFO = require('../data/roe-comps.json')
 const CLASS = INFO[1].class
-const CTEMPLATE = document.getElementById("hclass-tmplt")
-const CLONE = CTEMPLATE.content.cloneNode(true)
+const HTEMPLATE = document.getElementById("hclass-tmplt")
+const HCLONE = HTEMPLATE.content.cloneNode(true)
+
+const VTEMPLATE = document.getElementById("vclass-tmplt")
+const VCLONE = VTEMPLATE.content.cloneNode(true)
 
 const path = __dirname.replace("public", "resources/champIcons")
 
 
-function initTab(){
+
+function vinitTab(){
+    CLASS.forEach(element=> {
+        var div = document.createElement('div')
+        var btn = document.createElement('button')
+
+        btn.setAttribute("class", "vtablinks")
+        btn.style.backgroundImage = element.url
+        btn.style.backgroundColor = "black"
+        btn.addEventListener('click', function(){
+            
+            // Declare all variables
+            var i, tabcontent;
+           
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("vtabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                
+            }
+        
+           // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("vtablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+        
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById("v" + element.name).style.display = "block";
+            evt.currentTarget.className += " active";
+            
+        
+    })
+        div.appendChild(btn)
+        VCLONE.getElementById("vtab").appendChild(div)
+    })
+    
+}
+
+function vinitContent(){
+    CLASS.forEach(element => {
+        var vdiv = document.createElement('div')
+        vdiv.setAttribute("id", "v" + element.name)
+        vdiv.setAttribute("class", "vtabcontent")
+
+        element.champions.forEach(champ => {
+            var div = document.createElement('div')
+            var vimg = document.createElement('img')
+            vimg.setAttribute('class', 'vchampIcon')
+            vimg.src = path + '/' + champ + '.png'
+            div.appendChild(vimg)
+            vdiv.appendChild(div)
+        })
+        VCLONE.getElementById("vtab-content").appendChild(vdiv)
+    })
+  
+}
+
+function hinitTab(){
 //add buttons and settings based on how many classes
     CLASS.forEach(element => {
         var btn = document.createElement('button')
@@ -32,7 +93,7 @@ function initTab(){
                 }
             
                 // Show the current tab, and add an "active" class to the button that opened the tab
-                document.getElementById(element.name).style.display = "block";
+                document.getElementById("h" + element.name).style.display = "block";
                 evt.currentTarget.className += " active";
                 
             
@@ -42,16 +103,16 @@ function initTab(){
         btn.style.backgroundImage = element.url
         btn.style.backgroundColor = "black"
        
-        CLONE.getElementById("htab").appendChild(btn)
+        HCLONE.getElementById("htab").appendChild(btn)
 
     });
     
 }
 
-function initContent(){
+function hinitContent(){
     CLASS.forEach(element => {
         var vdiv = document.createElement('div')
-        vdiv.setAttribute("id", element.name)
+        vdiv.setAttribute("id", "h" + element.name)
         vdiv.setAttribute("class", "htabcontent")
 
         element.champions.forEach(champ =>{
@@ -61,15 +122,26 @@ function initContent(){
             vdiv.appendChild(vimg)
         })
   
-    CLONE.getElementById("htab-content").appendChild(vdiv)
+    HCLONE.getElementById("htab-content").appendChild(vdiv)
     })
 }
 
-initContent()
+hinitContent()
 
-initTab()
+hinitTab()
+document.getElementById("hinfo").appendChild(HCLONE)
 
-document.getElementById("info-bar").appendChild(CLONE)
+
+vinitContent()
+vinitTab()
+
+document.getElementById("vinfo").appendChild(VCLONE)
  
 
 
+if(window.innerWidth < window.innerHeight){
+    document.getElementById("hinfo").style.display = "none"
+}
+else{
+    document.getElementById("vinfo").style.display = "none"
+}
