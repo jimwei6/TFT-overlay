@@ -16,6 +16,7 @@ function windowInit() {                 //set up the window and its defaults
         alwaysOnTop: true,
         frame: false,
         nodeIntegration: true,
+        fullscreen: true
     })
      mainWindow.maximize()
      mainWindow.setIgnoreMouseEvents(true, {forward: true})
