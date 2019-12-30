@@ -16,4 +16,8 @@ Things trying to improve
 
 [pre 9.22](https://github.com/jimwei0620/TFT-overlay/releases/tag/1)
 
+![old interface](./pre9.22.1.JPG)
+
 [9.22.2 R.O.E ](https://github.com/jimwei0620/TFT-overlay/releases/tag/9.22.2)
+
+![new interface](./9.22.2.JPG)
