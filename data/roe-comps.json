@@ -11,7 +11,7 @@
             "description": "attacks have a chance to stun their target", "tiers":"", "url": "url('../resources/classIcons/Glacial.png')"},
             {"name":"Inferno", "champions":["Zyra", "Diana", "Varus", "Qiyana","Kindred", "Annie", "Brand"],
             "description": "ignite ground beneath their targets, damaging enemies in the fire", "tiers":"", "url": "url('../resources/classIcons/Inferno.png')"},
-            {"name":"Light", "champions":["Nasus", "Vayne", "Jax", "Aatrox", "Soraka", "Yorick"],
+            {"name":"Light", "champions":["Nasus", "Vayne", "Jax", "Aatrox", "Soraka", "Yorick", "Lucian"],
             "description": "on death, heal other light champion for a percentage of their max health and grant them attack speed for the rest of the round", "tiers":"", "url": "url('../resources/classIcons/Light.png')"},
             {"name":"Steel", "champions":["Rek'Sai", "Nocturne"], 
             "description": "briefly become immune to damage when they drop below 50% health", "tiers":"", "url": "url('../resources/classIcons/Steel.png')"},
@@ -21,7 +21,7 @@
             "description":"periodically grants allies mana", "tiers":"", "url": "url('../resources/classIcons/Ocean.png')"},
             {"name": "Poison", "champions":["Kog'Maw", "DrMundo", "Twitch", "Singed"],
             "description":"Damaging attacks and abilities to increase the mana cost of targets' abilities", "tiers":"", "url": "url('../resources/classIcons/Poison.png')"},
-            {"name": "Shadow", "champions":["Malzahar", "Kindred", "Veigar", "Sion", "Master_Yi"],
+            {"name": "Shadow", "champions":["Malzahar", "Kindred", "Veigar", "Sion", "Master_Yi", "Senna"],
             "description":"deal increased damage for the first few seconds of combat or takedown", "tiers":"", "url": "url('../resources/classIcons/Shadow.png')"},
             {"name": "Wind", "champions":["Yasuo", "Qiyana", "Janna"],
             "description": "grants your team dodge chance", "tiers":"", "url": "url('../resources/classIcons/Cloud.png')"},
@@ -55,7 +55,8 @@
         {"name":"Ranger", "champions":["Vayne", "Varus", "Ezreal", "Kindred", "Ashe", "Twitch"],
         "description":"Grants a chance to gain a burst of attack speed", "tiers":"" , "url" : "url('../resources/classIcons/Ranger.png')"},
         {"name":"Warden", "champions":["Ornn", "Nasus", "Thresh", "Braum", "Nautilus", "Malphite", "Taric"],
-        "description":"Grants extra armor", "tiers":"" , "url" : "url('../resources/classIcons/Warden.png')"}
+        "description":"Grants extra armor", "tiers":"" , "url" : "url('../resources/classIcons/Warden.png')"},
+        {"name": "Soulbound", "champions": ["Lucian", "Senna"], "description": "", "tiers":"", "url": "url('../resources/classIcons/Soulbound.png')"}
     ]
 
     }

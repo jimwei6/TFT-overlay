@@ -77,7 +77,7 @@ app.on('ready',()=>{                    //run when app is ready,
     loadHTML()   
 
     childWindows(subWindow, 300, 150, 'items', 10, 20)
-    childWindows(subWindow3, 405, 150, 'class', 10, 500)
+    childWindows(subWindow3, 420, 150, 'class', 10, 500)
     childWindows(subWindow2, 420, 150, 'origin', 50, 500)
 })
 
