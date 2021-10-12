@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jimwei0620/TFT-overlay#readme",
   "devDependencies": {
-    "electron": "^6.0.9"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "jquery": "^3.4.1"
