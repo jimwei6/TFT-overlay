@@ -21,3 +21,7 @@ Things trying to improve
 [9.22.2 R.O.E ](https://github.com/jimwei0620/TFT-overlay/releases/tag/9.22.2)
 
 ![new interface](./9.22.2.JPG)
+
+## Short demo video
+
+[Link](https://youtu.be/BbNc4m1Omn4)
